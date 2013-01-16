@@ -1,0 +1,20 @@
+<launch>
+
+  <include file="$(find r2_moveit_generated)/launch/upload_r2.launch"/>
+
+  <node pkg="tf" type="static_transform_publisher" name="odom_broadcaster" args="0 0 0 0 0 0 reference_frame world 100" />
+
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="/use_gui" value="false"/>
+  </node>
+  
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
+
+  <include file="$(find r2_moveit_generated)/launch/move_group.launch">
+    <arg name="allow_trajectory_execution" value="false"/>
+  </include>
+
+<include file="$(find r2_moveit_generated)/launch/moveit_rviz.launch"/>
+
+</launch>
