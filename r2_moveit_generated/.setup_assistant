@@ -1,0 +1,6 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: ""
+    relative_path: /home/sebasgm/Desktop/moveit/tests/nasa_r2_robot/r2.urdf
+  SRDF:
+    relative_path: config/r2.srdf
