@@ -1,0 +1,59 @@
+planner_configs:
+  SBLkConfigDefault:
+    type: geometric::SBL
+  LBKPIECEkConfigDefault:
+    type: geometric::LBKPIECE
+  RRTkConfigDefault:
+    type: geometric::RRT
+  RRTConnectkConfigDefault:
+    type: geometric::RRTConnect
+  LazyRRTkConfigDefault:
+    type: geometric::LazyRRT
+  ESTkConfigDefault:
+    type: geometric::EST
+  KPIECEkConfigDefault:
+    type: geometric::KPIECE
+  RRTStarkConfigDefault:
+    type: geometric::RRTstar
+  BKPIECEkConfigDefault:
+    type: geometric::BKPIECE
+left_arm:
+  planner_configs:
+    - SBLkConfigDefault
+    - LBKPIECEkConfigDefault
+    - RRTkConfigDefault
+    - RRTConnectkConfigDefault
+    - ESTkConfigDefault
+    - KPIECEkConfigDefault
+    - BKPIECEkConfigDefault
+    - RRTStarkConfigDefault
+right_arm:
+  planner_configs:
+    - SBLkConfigDefault
+    - LBKPIECEkConfigDefault
+    - RRTkConfigDefault
+    - RRTConnectkConfigDefault
+    - ESTkConfigDefault
+    - KPIECEkConfigDefault
+    - BKPIECEkConfigDefault
+    - RRTStarkConfigDefault
+right_hand:
+  planner_configs:
+    - SBLkConfigDefault
+    - LBKPIECEkConfigDefault
+    - RRTkConfigDefault
+    - RRTConnectkConfigDefault
+    - ESTkConfigDefault
+    - KPIECEkConfigDefault
+    - BKPIECEkConfigDefault
+    - RRTStarkConfigDefault
+left_hand:
+  planner_configs:
+    - SBLkConfigDefault
+    - LBKPIECEkConfigDefault
+    - RRTkConfigDefault
+    - RRTConnectkConfigDefault
+    - ESTkConfigDefault
+    - KPIECEkConfigDefault
+    - BKPIECEkConfigDefault
+    - RRTStarkConfigDefault
