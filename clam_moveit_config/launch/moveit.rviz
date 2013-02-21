@@ -1,0 +1,270 @@
+Panels:
+  - Class: rviz/Displays
+    Help Height: 78
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Global Options1
+        - /Status1
+        - /MotionPlanning1
+        - /MotionPlanning1/Scene Geometry1
+        - /MotionPlanning1/Scene Robot1
+        - /MotionPlanning1/Planning Request1
+        - /MotionPlanning1/Planning Metrics1
+        - /MotionPlanning1/Planned Path1
+      Splitter Ratio: 0.5
+    Tree Height: 391
+  - Class: rviz/Selection
+    Name: Selection
+  - Class: rviz/Tool Properties
+    Expanded:
+      - /2D Pose Estimate1
+      - /2D Nav Goal1
+    Name: Tool Properties
+    Splitter Ratio: 0.588679
+  - Class: rviz/Views
+    Expanded:
+      - /Current View1
+    Name: Views
+    Splitter Ratio: 0.5
+  - Class: rviz/Time
+    Name: Time
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Line Style:
+        Line Width: 0.03
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 10
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Class: moveit_rviz_plugin/MotionPlanning
+      Enabled: true
+      MoveIt_Goal_Tolerance: 0
+      MoveIt_Planning_Time: 5
+      MoveIt_Use_Constraint_Aware_IK: true
+      MoveIt_Warehouse_Host: 127.0.0.1
+      MoveIt_Warehouse_Port: 33829
+      Name: MotionPlanning
+      Planned Path:
+        Links:
+          base_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          elbow_pitch_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          elbow_roll_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          gripper_fake_tip_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          gripper_finger_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          gripper_fixed_finger_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          gripper_roll_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          shoulder_pan_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          shoulder_pitch_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          tabletop_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          wrist_pitch_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          wrist_roll_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+        Loop Animation: false
+        Robot Alpha: 0.5
+        Show Robot Collision: false
+        Show Robot Visual: true
+        Show Trail: false
+        State Display Time: 0.05 s
+        Trajectory Topic: /move_group/display_planned_path
+      Planning Metrics:
+        Payload: 1
+        Show Joint Torques: false
+        Show Manipulability: false
+        Show Manipulability Index: false
+        Show Weight Limit: false
+      Planning Request:
+        Colliding Link Color: 255; 0; 0
+        Goal State Alpha: 1
+        Goal State Color: 250; 128; 0
+        Interactive Marker Size: 0
+        Joint Violation Color: 255; 0; 255
+        Planning Group: arm
+        Query Goal State: true
+        Query Start State: true
+        Show Workspace: false
+        Start State Alpha: 1
+        Start State Color: 0; 255; 0
+      Planning Scene Topic: planning_scene
+      Robot Description: robot_description
+      Scene Geometry:
+        Scene Alpha: 0.9
+        Scene Color: 50; 230; 50
+        Scene Display Time: 0.2
+        Show Scene Geometry: true
+      Scene Robot:
+        Attached Body Color: 150; 50; 150
+        Links:
+          base_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          elbow_pitch_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          elbow_roll_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          gripper_fake_tip_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          gripper_finger_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          gripper_fixed_finger_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          gripper_roll_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          shoulder_pan_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          shoulder_pitch_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          tabletop_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          wrist_pitch_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          wrist_roll_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+        Robot Alpha: 0.5
+        Show Scene Robot: true
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: /base_link
+  Name: root
+  Tools:
+    - Class: rviz/Interact
+    - Class: rviz/MoveCamera
+    - Class: rviz/Select
+    - Class: rviz/Measure
+    - Class: rviz/SetInitialPose
+      Topic: /initialpose
+    - Class: rviz/SetGoal
+      Topic: /move_base_simple/goal
+  Value: true
+  Views:
+    Current:
+      Class: rviz/Orbit
+      Distance: 1.44857
+      Focal Point:
+        X: 0.150739
+        Y: 0.0842114
+        Z: 0.312037
+      Name: Current View
+      Near Clip Distance: 0.01
+      Pitch: 0.275399
+      Target Frame: <Fixed Frame>
+      Value: Orbit (rviz)
+      Yaw: 4.87855
+    Saved: ~
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 1200
+  Hide Left Dock: false
+  Hide Right Dock: false
+  Motion Planning:
+    collapsed: false
+  QMainWindow State: 000000ff00000000fd0000000400000000000002a200000451fc0200000007fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000004100000216000000dd00fffffffb0000000a00560069006500770073010000025d000000b0000000b000fffffffb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e006701000003130000017f0000017400ffffff000000010000010f00000451fc0200000002fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004a00000003efc0100000002fb0000000800540069006d00650000000000000004a0000002bf00fffffffb0000000800540069006d00650100000000000004500000000000000000000003980000045100000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Selection:
+    collapsed: false
+  Time:
+    collapsed: false
+  Tool Properties:
+    collapsed: false
+  Views:
+    collapsed: false
+  Width: 1600
+  X: 3839
+  Y: -28
