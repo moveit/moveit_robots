@@ -1,0 +1,1028 @@
+<?xml version="1.0" ?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="atlas">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="right_arm">
+        <joint name="r_arm_usy" />
+        <joint name="r_arm_shx" />
+        <joint name="r_arm_ely" />
+        <joint name="r_arm_elx" />
+        <joint name="r_arm_uwy" />
+        <joint name="r_arm_mwx" />
+    </group>
+    <group name="left_arm">
+        <joint name="l_arm_usy" />
+        <joint name="l_arm_shx" />
+        <joint name="l_arm_ely" />
+        <joint name="l_arm_elx" />
+        <joint name="l_arm_uwy" />
+        <joint name="l_arm_mwx" />
+    </group>
+    <group name="right_arm_torso">
+        <joint name="r_arm_usy" />
+        <joint name="r_arm_shx" />
+        <joint name="r_arm_ely" />
+        <joint name="r_arm_elx" />
+        <joint name="r_arm_uwy" />
+        <joint name="r_arm_mwx" />
+        <joint name="back_lbz" />
+        <joint name="back_mby" />
+        <joint name="back_ubx" />
+    </group>
+    <group name="left_arm_torso">
+        <joint name="l_arm_usy" />
+        <joint name="l_arm_shx" />
+        <joint name="l_arm_ely" />
+        <joint name="l_arm_elx" />
+        <joint name="l_arm_uwy" />
+        <joint name="l_arm_mwx" />
+        <joint name="back_lbz" />
+        <joint name="back_mby" />
+        <joint name="back_ubx" />
+    </group>
+    <group name="right_hand">
+        <joint name="right_sandia_hand_joint" />
+        <joint name="right_f0_base" />
+        <joint name="right_f0_fixed_accel" />
+        <joint name="right_f0_j0" />
+        <joint name="right_f0_j1" />
+        <joint name="right_f0_1_accel" />
+        <joint name="right_f0_j2" />
+        <joint name="right_f0_2_accel" />
+        <joint name="right_f1_base" />
+        <joint name="right_f1_fixed_accel" />
+        <joint name="right_f1_j0" />
+        <joint name="right_f1_j1" />
+        <joint name="right_f1_1_accel" />
+        <joint name="right_f1_j2" />
+        <joint name="right_f1_2_accel" />
+        <joint name="right_f2_base" />
+        <joint name="right_f2_fixed_accel" />
+        <joint name="right_f2_j0" />
+        <joint name="right_f2_j1" />
+        <joint name="right_f2_1_accel" />
+        <joint name="right_f2_j2" />
+        <joint name="right_f2_2_accel" />
+        <joint name="right_f3_base" />
+        <joint name="right_f3_fixed_accel" />
+        <joint name="right_f3_j0" />
+        <joint name="right_f3_j1" />
+        <joint name="right_f3_1_accel" />
+        <joint name="right_f3_j2" />
+        <joint name="right_f3_2_accel" />
+        <joint name="right_palm_left_camera_frame_joint" />
+        <joint name="right_palm_left_camera_optical_frame_joint" />
+        <joint name="right_palm_right_camera_frame_joint" />
+        <joint name="right_palm_right_camera_optical_frame_joint" />
+    </group>
+    <group name="left_hand">
+        <joint name="left_sandia_hand_joint" />
+        <joint name="left_f0_base" />
+        <joint name="left_f0_fixed_accel" />
+        <joint name="left_f0_j0" />
+        <joint name="left_f0_j1" />
+        <joint name="left_f0_1_accel" />
+        <joint name="left_f0_j2" />
+        <joint name="left_f0_2_accel" />
+        <joint name="left_f1_base" />
+        <joint name="left_f1_fixed_accel" />
+        <joint name="left_f1_j0" />
+        <joint name="left_f1_j1" />
+        <joint name="left_f1_1_accel" />
+        <joint name="left_f1_j2" />
+        <joint name="left_f1_2_accel" />
+        <joint name="left_f2_base" />
+        <joint name="left_f2_fixed_accel" />
+        <joint name="left_f2_j0" />
+        <joint name="left_f2_j1" />
+        <joint name="left_f2_1_accel" />
+        <joint name="left_f2_j2" />
+        <joint name="left_f2_2_accel" />
+        <joint name="left_f3_base" />
+        <joint name="left_f3_fixed_accel" />
+        <joint name="left_f3_j0" />
+        <joint name="left_f3_j1" />
+        <joint name="left_f3_1_accel" />
+        <joint name="left_f3_j2" />
+        <joint name="left_f3_2_accel" />
+        <joint name="left_palm_left_camera_frame_joint" />
+        <joint name="left_palm_left_camera_optical_frame_joint" />
+        <joint name="left_palm_right_camera_frame_joint" />
+        <joint name="left_palm_right_camera_optical_frame_joint" />
+    </group>
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="right_gripper" parent_link="r_hand" group="right_hand" />
+    <end_effector name="left_gripper" parent_link="l_hand" group="left_hand" />
+    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
+    <virtual_joint name="world_joint" type="floating" parent_frame="world" child_link="pelvis" />
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="head" link2="head_imu_link" reason="Adjacent" />
+    <disable_collisions link1="head" link2="hokuyo_link" reason="Adjacent" />
+    <disable_collisions link1="head" link2="imu_link" reason="Never" />
+    <disable_collisions link1="head" link2="l_clav" reason="Never" />
+    <disable_collisions link1="head" link2="l_foot" reason="Never" />
+    <disable_collisions link1="head" link2="l_larm" reason="Never" />
+    <disable_collisions link1="head" link2="l_lglut" reason="Never" />
+    <disable_collisions link1="head" link2="l_lleg" reason="Never" />
+    <disable_collisions link1="head" link2="l_scap" reason="Never" />
+    <disable_collisions link1="head" link2="l_talus" reason="Never" />
+    <disable_collisions link1="head" link2="l_uarm" reason="Never" />
+    <disable_collisions link1="head" link2="l_uglut" reason="Never" />
+    <disable_collisions link1="head" link2="l_uleg" reason="Never" />
+    <disable_collisions link1="head" link2="ltorso" reason="Never" />
+    <disable_collisions link1="head" link2="mtorso" reason="Never" />
+    <disable_collisions link1="head" link2="pelvis" reason="Never" />
+    <disable_collisions link1="head" link2="r_clav" reason="Never" />
+    <disable_collisions link1="head" link2="r_foot" reason="Never" />
+    <disable_collisions link1="head" link2="r_larm" reason="Never" />
+    <disable_collisions link1="head" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="head" link2="r_lleg" reason="Never" />
+    <disable_collisions link1="head" link2="r_scap" reason="Never" />
+    <disable_collisions link1="head" link2="r_talus" reason="Never" />
+    <disable_collisions link1="head" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="head" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="head" link2="r_uleg" reason="Never" />
+    <disable_collisions link1="head" link2="utorso" reason="Adjacent" />
+    <disable_collisions link1="head_imu_link" link2="hokuyo_link" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="imu_link" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="l_clav" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="l_farm" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="l_foot" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="l_larm" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="l_lglut" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="l_lleg" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="l_scap" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="l_talus" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="l_uarm" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="l_uglut" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="l_uleg" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="left_f0_2" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="ltorso" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="mtorso" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="pelvis" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="r_clav" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="r_farm" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="r_foot" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="r_larm" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="r_lleg" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="r_scap" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="r_talus" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="r_uleg" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="head_imu_link" link2="utorso" reason="Never" />
+    <disable_collisions link1="hokuyo_link" link2="imu_link" reason="Never" />
+    <disable_collisions link1="hokuyo_link" link2="l_clav" reason="Never" />
+    <disable_collisions link1="hokuyo_link" link2="l_foot" reason="Never" />
+    <disable_collisions link1="hokuyo_link" link2="l_larm" reason="Never" />
+    <disable_collisions link1="hokuyo_link" link2="l_lglut" reason="Never" />
+    <disable_collisions link1="hokuyo_link" link2="l_lleg" reason="Never" />
+    <disable_collisions link1="hokuyo_link" link2="l_scap" reason="Never" />
+    <disable_collisions link1="hokuyo_link" link2="l_talus" reason="Never" />
+    <disable_collisions link1="hokuyo_link" link2="l_uarm" reason="Never" />
+    <disable_collisions link1="hokuyo_link" link2="l_uglut" reason="Never" />
+    <disable_collisions link1="hokuyo_link" link2="l_uleg" reason="Never" />
+    <disable_collisions link1="hokuyo_link" link2="ltorso" reason="Never" />
+    <disable_collisions link1="hokuyo_link" link2="mtorso" reason="Never" />
+    <disable_collisions link1="hokuyo_link" link2="pelvis" reason="Never" />
+    <disable_collisions link1="hokuyo_link" link2="r_clav" reason="Never" />
+    <disable_collisions link1="hokuyo_link" link2="r_foot" reason="Never" />
+    <disable_collisions link1="hokuyo_link" link2="r_larm" reason="Never" />
+    <disable_collisions link1="hokuyo_link" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="hokuyo_link" link2="r_lleg" reason="Never" />
+    <disable_collisions link1="hokuyo_link" link2="r_scap" reason="Never" />
+    <disable_collisions link1="hokuyo_link" link2="r_talus" reason="Never" />
+    <disable_collisions link1="hokuyo_link" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="hokuyo_link" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="hokuyo_link" link2="r_uleg" reason="Never" />
+    <disable_collisions link1="hokuyo_link" link2="utorso" reason="Never" />
+    <disable_collisions link1="imu_link" link2="l_clav" reason="Never" />
+    <disable_collisions link1="imu_link" link2="l_farm" reason="Never" />
+    <disable_collisions link1="imu_link" link2="l_foot" reason="Never" />
+    <disable_collisions link1="imu_link" link2="l_larm" reason="Never" />
+    <disable_collisions link1="imu_link" link2="l_lglut" reason="Never" />
+    <disable_collisions link1="imu_link" link2="l_lleg" reason="Never" />
+    <disable_collisions link1="imu_link" link2="l_scap" reason="Never" />
+    <disable_collisions link1="imu_link" link2="l_talus" reason="Never" />
+    <disable_collisions link1="imu_link" link2="l_uarm" reason="Never" />
+    <disable_collisions link1="imu_link" link2="l_uglut" reason="Never" />
+    <disable_collisions link1="imu_link" link2="l_uleg" reason="Never" />
+    <disable_collisions link1="imu_link" link2="left_f0_0" reason="Never" />
+    <disable_collisions link1="imu_link" link2="left_f0_1" reason="Never" />
+    <disable_collisions link1="imu_link" link2="left_f0_2" reason="Never" />
+    <disable_collisions link1="imu_link" link2="left_f2_0" reason="Never" />
+    <disable_collisions link1="imu_link" link2="left_f3_0" reason="Never" />
+    <disable_collisions link1="imu_link" link2="left_f3_1" reason="Never" />
+    <disable_collisions link1="imu_link" link2="left_f3_2" reason="Never" />
+    <disable_collisions link1="imu_link" link2="left_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="imu_link" link2="left_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="imu_link" link2="ltorso" reason="Never" />
+    <disable_collisions link1="imu_link" link2="mtorso" reason="Never" />
+    <disable_collisions link1="imu_link" link2="pelvis" reason="Adjacent" />
+    <disable_collisions link1="imu_link" link2="r_clav" reason="Never" />
+    <disable_collisions link1="imu_link" link2="r_farm" reason="Never" />
+    <disable_collisions link1="imu_link" link2="r_foot" reason="Never" />
+    <disable_collisions link1="imu_link" link2="r_larm" reason="Never" />
+    <disable_collisions link1="imu_link" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="imu_link" link2="r_lleg" reason="Never" />
+    <disable_collisions link1="imu_link" link2="r_scap" reason="Never" />
+    <disable_collisions link1="imu_link" link2="r_talus" reason="Never" />
+    <disable_collisions link1="imu_link" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="imu_link" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="imu_link" link2="r_uleg" reason="Never" />
+    <disable_collisions link1="imu_link" link2="right_f0_0" reason="Never" />
+    <disable_collisions link1="imu_link" link2="right_f0_1" reason="Never" />
+    <disable_collisions link1="imu_link" link2="right_f1_0" reason="Never" />
+    <disable_collisions link1="imu_link" link2="right_f1_2" reason="Never" />
+    <disable_collisions link1="imu_link" link2="right_f2_2" reason="Never" />
+    <disable_collisions link1="imu_link" link2="right_f3_0" reason="Never" />
+    <disable_collisions link1="imu_link" link2="right_f3_2" reason="Never" />
+    <disable_collisions link1="imu_link" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="imu_link" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="imu_link" link2="utorso" reason="Never" />
+    <disable_collisions link1="l_clav" link2="l_farm" reason="Never" />
+    <disable_collisions link1="l_clav" link2="l_foot" reason="Never" />
+    <disable_collisions link1="l_clav" link2="l_hand" reason="Never" />
+    <disable_collisions link1="l_clav" link2="l_larm" reason="Never" />
+    <disable_collisions link1="l_clav" link2="l_lglut" reason="Never" />
+    <disable_collisions link1="l_clav" link2="l_lleg" reason="Never" />
+    <disable_collisions link1="l_clav" link2="l_scap" reason="Adjacent" />
+    <disable_collisions link1="l_clav" link2="l_talus" reason="Never" />
+    <disable_collisions link1="l_clav" link2="l_uarm" reason="Never" />
+    <disable_collisions link1="l_clav" link2="l_uglut" reason="Never" />
+    <disable_collisions link1="l_clav" link2="l_uleg" reason="Never" />
+    <disable_collisions link1="l_clav" link2="left_f1_0" reason="Never" />
+    <disable_collisions link1="l_clav" link2="left_f2_0" reason="Never" />
+    <disable_collisions link1="l_clav" link2="left_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="l_clav" link2="left_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="l_clav" link2="ltorso" reason="Never" />
+    <disable_collisions link1="l_clav" link2="mtorso" reason="Never" />
+    <disable_collisions link1="l_clav" link2="pelvis" reason="Never" />
+    <disable_collisions link1="l_clav" link2="r_clav" reason="Never" />
+    <disable_collisions link1="l_clav" link2="r_farm" reason="Never" />
+    <disable_collisions link1="l_clav" link2="r_foot" reason="Never" />
+    <disable_collisions link1="l_clav" link2="r_hand" reason="Never" />
+    <disable_collisions link1="l_clav" link2="r_larm" reason="Never" />
+    <disable_collisions link1="l_clav" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="l_clav" link2="r_lleg" reason="Never" />
+    <disable_collisions link1="l_clav" link2="r_scap" reason="Never" />
+    <disable_collisions link1="l_clav" link2="r_talus" reason="Never" />
+    <disable_collisions link1="l_clav" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="l_clav" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="l_clav" link2="r_uleg" reason="Never" />
+    <disable_collisions link1="l_clav" link2="utorso" reason="Adjacent" />
+    <disable_collisions link1="l_farm" link2="l_hand" reason="Adjacent" />
+    <disable_collisions link1="l_farm" link2="l_larm" reason="Adjacent" />
+    <disable_collisions link1="l_farm" link2="l_scap" reason="Never" />
+    <disable_collisions link1="l_farm" link2="l_uarm" reason="Never" />
+    <disable_collisions link1="l_farm" link2="left_f0_0" reason="Never" />
+    <disable_collisions link1="l_farm" link2="left_f0_1" reason="Never" />
+    <disable_collisions link1="l_farm" link2="left_f0_2" reason="Never" />
+    <disable_collisions link1="l_farm" link2="left_f1_0" reason="Never" />
+    <disable_collisions link1="l_farm" link2="left_f1_1" reason="Never" />
+    <disable_collisions link1="l_farm" link2="left_f1_2" reason="Never" />
+    <disable_collisions link1="l_farm" link2="left_f2_0" reason="Never" />
+    <disable_collisions link1="l_farm" link2="left_f2_1" reason="Never" />
+    <disable_collisions link1="l_farm" link2="left_f2_2" reason="Never" />
+    <disable_collisions link1="l_farm" link2="left_f3_0" reason="Never" />
+    <disable_collisions link1="l_farm" link2="left_f3_1" reason="Never" />
+    <disable_collisions link1="l_farm" link2="left_palm" reason="Never" />
+    <disable_collisions link1="l_farm" link2="left_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="l_farm" link2="left_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="l_farm" link2="mtorso" reason="Never" />
+    <disable_collisions link1="l_farm" link2="r_clav" reason="Never" />
+    <disable_collisions link1="l_farm" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="l_farm" link2="r_scap" reason="Never" />
+    <disable_collisions link1="l_farm" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="l_farm" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="l_farm" link2="right_f3_2" reason="Never" />
+    <disable_collisions link1="l_foot" link2="l_lglut" reason="Never" />
+    <disable_collisions link1="l_foot" link2="l_lleg" reason="Never" />
+    <disable_collisions link1="l_foot" link2="l_scap" reason="Never" />
+    <disable_collisions link1="l_foot" link2="l_talus" reason="Adjacent" />
+    <disable_collisions link1="l_foot" link2="l_uarm" reason="Never" />
+    <disable_collisions link1="l_foot" link2="l_uglut" reason="Never" />
+    <disable_collisions link1="l_foot" link2="l_uleg" reason="Never" />
+    <disable_collisions link1="l_foot" link2="left_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="l_foot" link2="ltorso" reason="Never" />
+    <disable_collisions link1="l_foot" link2="mtorso" reason="Never" />
+    <disable_collisions link1="l_foot" link2="pelvis" reason="Never" />
+    <disable_collisions link1="l_foot" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="l_foot" link2="r_scap" reason="Never" />
+    <disable_collisions link1="l_foot" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="l_foot" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="l_hand" link2="l_larm" reason="Never" />
+    <disable_collisions link1="l_hand" link2="l_scap" reason="Never" />
+    <disable_collisions link1="l_hand" link2="l_talus" reason="Never" />
+    <disable_collisions link1="l_hand" link2="l_uarm" reason="Never" />
+    <disable_collisions link1="l_hand" link2="left_f0_0" reason="Never" />
+    <disable_collisions link1="l_hand" link2="left_f0_1" reason="Never" />
+    <disable_collisions link1="l_hand" link2="left_f0_2" reason="Never" />
+    <disable_collisions link1="l_hand" link2="left_f1_0" reason="Never" />
+    <disable_collisions link1="l_hand" link2="left_f1_1" reason="Never" />
+    <disable_collisions link1="l_hand" link2="left_f1_2" reason="Never" />
+    <disable_collisions link1="l_hand" link2="left_f2_0" reason="Never" />
+    <disable_collisions link1="l_hand" link2="left_f2_1" reason="Never" />
+    <disable_collisions link1="l_hand" link2="left_f2_2" reason="Never" />
+    <disable_collisions link1="l_hand" link2="left_f3_0" reason="Never" />
+    <disable_collisions link1="l_hand" link2="left_palm" reason="Adjacent" />
+    <disable_collisions link1="l_hand" link2="left_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="l_hand" link2="left_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="l_hand" link2="r_clav" reason="Never" />
+    <disable_collisions link1="l_hand" link2="r_talus" reason="Never" />
+    <disable_collisions link1="l_hand" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="l_larm" link2="l_lglut" reason="Never" />
+    <disable_collisions link1="l_larm" link2="l_scap" reason="Never" />
+    <disable_collisions link1="l_larm" link2="l_talus" reason="Never" />
+    <disable_collisions link1="l_larm" link2="l_uarm" reason="Adjacent" />
+    <disable_collisions link1="l_larm" link2="l_uglut" reason="Never" />
+    <disable_collisions link1="l_larm" link2="left_f0_0" reason="Never" />
+    <disable_collisions link1="l_larm" link2="left_f0_1" reason="Never" />
+    <disable_collisions link1="l_larm" link2="left_f0_2" reason="Never" />
+    <disable_collisions link1="l_larm" link2="left_f1_0" reason="Never" />
+    <disable_collisions link1="l_larm" link2="left_f1_1" reason="Never" />
+    <disable_collisions link1="l_larm" link2="left_f1_2" reason="Never" />
+    <disable_collisions link1="l_larm" link2="left_f2_0" reason="Never" />
+    <disable_collisions link1="l_larm" link2="left_f2_1" reason="Never" />
+    <disable_collisions link1="l_larm" link2="left_f2_2" reason="Never" />
+    <disable_collisions link1="l_larm" link2="left_f3_0" reason="Never" />
+    <disable_collisions link1="l_larm" link2="left_f3_1" reason="Never" />
+    <disable_collisions link1="l_larm" link2="left_f3_2" reason="Never" />
+    <disable_collisions link1="l_larm" link2="left_palm" reason="Never" />
+    <disable_collisions link1="l_larm" link2="left_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="l_larm" link2="left_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="l_larm" link2="ltorso" reason="Never" />
+    <disable_collisions link1="l_larm" link2="mtorso" reason="Never" />
+    <disable_collisions link1="l_larm" link2="pelvis" reason="Never" />
+    <disable_collisions link1="l_larm" link2="r_clav" reason="Never" />
+    <disable_collisions link1="l_larm" link2="r_larm" reason="Never" />
+    <disable_collisions link1="l_larm" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="l_larm" link2="r_scap" reason="Never" />
+    <disable_collisions link1="l_larm" link2="r_talus" reason="Never" />
+    <disable_collisions link1="l_larm" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="l_larm" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="l_larm" link2="r_uleg" reason="Never" />
+    <disable_collisions link1="l_larm" link2="right_f0_0" reason="Never" />
+    <disable_collisions link1="l_larm" link2="right_f0_1" reason="Never" />
+    <disable_collisions link1="l_larm" link2="right_f1_0" reason="Never" />
+    <disable_collisions link1="l_larm" link2="right_f2_0" reason="Never" />
+    <disable_collisions link1="l_larm" link2="right_f2_1" reason="Never" />
+    <disable_collisions link1="l_larm" link2="right_f2_2" reason="Never" />
+    <disable_collisions link1="l_larm" link2="right_palm" reason="Never" />
+    <disable_collisions link1="l_larm" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="l_larm" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="l_lglut" link2="l_lleg" reason="Never" />
+    <disable_collisions link1="l_lglut" link2="l_scap" reason="Never" />
+    <disable_collisions link1="l_lglut" link2="l_talus" reason="Never" />
+    <disable_collisions link1="l_lglut" link2="l_uarm" reason="Never" />
+    <disable_collisions link1="l_lglut" link2="l_uglut" reason="Adjacent" />
+    <disable_collisions link1="l_lglut" link2="l_uleg" reason="Adjacent" />
+    <disable_collisions link1="l_lglut" link2="left_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="l_lglut" link2="mtorso" reason="Never" />
+    <disable_collisions link1="l_lglut" link2="pelvis" reason="Never" />
+    <disable_collisions link1="l_lglut" link2="r_clav" reason="Never" />
+    <disable_collisions link1="l_lglut" link2="r_farm" reason="Never" />
+    <disable_collisions link1="l_lglut" link2="r_hand" reason="Never" />
+    <disable_collisions link1="l_lglut" link2="r_larm" reason="Never" />
+    <disable_collisions link1="l_lglut" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="l_lglut" link2="r_lleg" reason="Never" />
+    <disable_collisions link1="l_lglut" link2="r_scap" reason="Never" />
+    <disable_collisions link1="l_lglut" link2="r_talus" reason="Never" />
+    <disable_collisions link1="l_lglut" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="l_lglut" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="l_lglut" link2="r_uleg" reason="Never" />
+    <disable_collisions link1="l_lglut" link2="right_f3_0" reason="Never" />
+    <disable_collisions link1="l_lglut" link2="right_f3_2" reason="Never" />
+    <disable_collisions link1="l_lglut" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="l_lglut" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="l_lleg" link2="l_scap" reason="Never" />
+    <disable_collisions link1="l_lleg" link2="l_talus" reason="Adjacent" />
+    <disable_collisions link1="l_lleg" link2="l_uglut" reason="Never" />
+    <disable_collisions link1="l_lleg" link2="l_uleg" reason="Adjacent" />
+    <disable_collisions link1="l_lleg" link2="ltorso" reason="Never" />
+    <disable_collisions link1="l_lleg" link2="mtorso" reason="Never" />
+    <disable_collisions link1="l_lleg" link2="pelvis" reason="Never" />
+    <disable_collisions link1="l_lleg" link2="r_clav" reason="Never" />
+    <disable_collisions link1="l_lleg" link2="r_larm" reason="Never" />
+    <disable_collisions link1="l_lleg" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="l_lleg" link2="r_scap" reason="Never" />
+    <disable_collisions link1="l_lleg" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="l_lleg" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="l_scap" link2="l_talus" reason="Never" />
+    <disable_collisions link1="l_scap" link2="l_uarm" reason="Adjacent" />
+    <disable_collisions link1="l_scap" link2="l_uglut" reason="Never" />
+    <disable_collisions link1="l_scap" link2="left_f0_0" reason="Never" />
+    <disable_collisions link1="l_scap" link2="left_f0_1" reason="Never" />
+    <disable_collisions link1="l_scap" link2="left_f0_2" reason="Never" />
+    <disable_collisions link1="l_scap" link2="left_f1_0" reason="Never" />
+    <disable_collisions link1="l_scap" link2="left_f1_1" reason="Never" />
+    <disable_collisions link1="l_scap" link2="left_f1_2" reason="Never" />
+    <disable_collisions link1="l_scap" link2="left_f2_0" reason="Never" />
+    <disable_collisions link1="l_scap" link2="left_f2_1" reason="Never" />
+    <disable_collisions link1="l_scap" link2="left_f2_2" reason="Never" />
+    <disable_collisions link1="l_scap" link2="left_f3_0" reason="Never" />
+    <disable_collisions link1="l_scap" link2="left_palm" reason="Never" />
+    <disable_collisions link1="l_scap" link2="left_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="l_scap" link2="left_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="l_scap" link2="ltorso" reason="Never" />
+    <disable_collisions link1="l_scap" link2="mtorso" reason="Never" />
+    <disable_collisions link1="l_scap" link2="pelvis" reason="Never" />
+    <disable_collisions link1="l_scap" link2="r_clav" reason="Never" />
+    <disable_collisions link1="l_scap" link2="r_farm" reason="Never" />
+    <disable_collisions link1="l_scap" link2="r_foot" reason="Never" />
+    <disable_collisions link1="l_scap" link2="r_hand" reason="Never" />
+    <disable_collisions link1="l_scap" link2="r_larm" reason="Never" />
+    <disable_collisions link1="l_scap" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="l_scap" link2="r_lleg" reason="Never" />
+    <disable_collisions link1="l_scap" link2="r_scap" reason="Never" />
+    <disable_collisions link1="l_scap" link2="r_talus" reason="Never" />
+    <disable_collisions link1="l_scap" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="l_scap" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="l_scap" link2="r_uleg" reason="Never" />
+    <disable_collisions link1="l_scap" link2="right_f3_0" reason="Never" />
+    <disable_collisions link1="l_scap" link2="right_f3_2" reason="Never" />
+    <disable_collisions link1="l_scap" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="l_talus" link2="l_uglut" reason="Never" />
+    <disable_collisions link1="l_talus" link2="l_uleg" reason="Never" />
+    <disable_collisions link1="l_talus" link2="left_f0_0" reason="Never" />
+    <disable_collisions link1="l_talus" link2="left_f0_2" reason="Never" />
+    <disable_collisions link1="l_talus" link2="left_f1_1" reason="Never" />
+    <disable_collisions link1="l_talus" link2="left_f1_2" reason="Never" />
+    <disable_collisions link1="l_talus" link2="left_f2_0" reason="Never" />
+    <disable_collisions link1="l_talus" link2="left_f3_0" reason="Never" />
+    <disable_collisions link1="l_talus" link2="left_f3_1" reason="Never" />
+    <disable_collisions link1="l_talus" link2="left_f3_2" reason="Never" />
+    <disable_collisions link1="l_talus" link2="left_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="l_talus" link2="left_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="l_talus" link2="ltorso" reason="Never" />
+    <disable_collisions link1="l_talus" link2="mtorso" reason="Never" />
+    <disable_collisions link1="l_talus" link2="pelvis" reason="Never" />
+    <disable_collisions link1="l_talus" link2="r_clav" reason="Never" />
+    <disable_collisions link1="l_talus" link2="r_farm" reason="Never" />
+    <disable_collisions link1="l_talus" link2="r_hand" reason="Never" />
+    <disable_collisions link1="l_talus" link2="r_larm" reason="Never" />
+    <disable_collisions link1="l_talus" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="l_talus" link2="r_scap" reason="Never" />
+    <disable_collisions link1="l_talus" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="l_talus" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="l_talus" link2="right_f0_0" reason="Never" />
+    <disable_collisions link1="l_talus" link2="right_f0_1" reason="Never" />
+    <disable_collisions link1="l_talus" link2="right_f0_2" reason="Never" />
+    <disable_collisions link1="l_talus" link2="right_f1_0" reason="Never" />
+    <disable_collisions link1="l_talus" link2="right_f2_0" reason="Never" />
+    <disable_collisions link1="l_talus" link2="right_f2_1" reason="Never" />
+    <disable_collisions link1="l_talus" link2="right_f3_0" reason="Never" />
+    <disable_collisions link1="l_talus" link2="right_f3_1" reason="Never" />
+    <disable_collisions link1="l_talus" link2="right_f3_2" reason="Never" />
+    <disable_collisions link1="l_talus" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="l_talus" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="l_uglut" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="left_f0_0" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="left_f0_1" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="left_f0_2" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="left_f1_0" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="left_f1_1" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="left_f1_2" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="left_f2_0" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="left_f2_1" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="left_f2_2" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="left_f3_0" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="left_f3_1" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="left_f3_2" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="left_palm" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="left_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="left_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="ltorso" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="mtorso" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="pelvis" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="r_clav" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="r_larm" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="r_scap" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="r_talus" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="r_uleg" reason="Never" />
+    <disable_collisions link1="l_uarm" link2="right_f1_1" reason="Never" />
+    <disable_collisions link1="l_uglut" link2="l_uleg" reason="Never" />
+    <disable_collisions link1="l_uglut" link2="ltorso" reason="Default" />
+    <disable_collisions link1="l_uglut" link2="mtorso" reason="Never" />
+    <disable_collisions link1="l_uglut" link2="pelvis" reason="Adjacent" />
+    <disable_collisions link1="l_uglut" link2="r_clav" reason="Never" />
+    <disable_collisions link1="l_uglut" link2="r_farm" reason="Never" />
+    <disable_collisions link1="l_uglut" link2="r_foot" reason="Never" />
+    <disable_collisions link1="l_uglut" link2="r_hand" reason="Never" />
+    <disable_collisions link1="l_uglut" link2="r_larm" reason="Never" />
+    <disable_collisions link1="l_uglut" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="l_uglut" link2="r_lleg" reason="Never" />
+    <disable_collisions link1="l_uglut" link2="r_scap" reason="Never" />
+    <disable_collisions link1="l_uglut" link2="r_talus" reason="Never" />
+    <disable_collisions link1="l_uglut" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="l_uglut" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="l_uglut" link2="r_uleg" reason="Never" />
+    <disable_collisions link1="l_uglut" link2="right_f3_1" reason="Never" />
+    <disable_collisions link1="l_uglut" link2="right_f3_2" reason="Never" />
+    <disable_collisions link1="l_uleg" link2="ltorso" reason="Never" />
+    <disable_collisions link1="l_uleg" link2="mtorso" reason="Never" />
+    <disable_collisions link1="l_uleg" link2="r_clav" reason="Never" />
+    <disable_collisions link1="l_uleg" link2="r_larm" reason="Never" />
+    <disable_collisions link1="l_uleg" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="l_uleg" link2="r_scap" reason="Never" />
+    <disable_collisions link1="l_uleg" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="l_uleg" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="left_f0_0" link2="left_f0_1" reason="Adjacent" />
+    <disable_collisions link1="left_f0_0" link2="left_f0_2" reason="Never" />
+    <disable_collisions link1="left_f0_0" link2="left_f1_0" reason="Never" />
+    <disable_collisions link1="left_f0_0" link2="left_f1_2" reason="Never" />
+    <disable_collisions link1="left_f0_0" link2="left_f2_0" reason="Never" />
+    <disable_collisions link1="left_f0_0" link2="left_f3_0" reason="Never" />
+    <disable_collisions link1="left_f0_0" link2="left_f3_1" reason="Never" />
+    <disable_collisions link1="left_f0_0" link2="left_palm" reason="Adjacent" />
+    <disable_collisions link1="left_f0_0" link2="left_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f0_0" link2="left_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f0_0" link2="r_farm" reason="Never" />
+    <disable_collisions link1="left_f0_0" link2="r_foot" reason="Never" />
+    <disable_collisions link1="left_f0_0" link2="r_larm" reason="Never" />
+    <disable_collisions link1="left_f0_0" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="left_f0_0" link2="r_talus" reason="Never" />
+    <disable_collisions link1="left_f0_0" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="left_f0_0" link2="right_f0_0" reason="Never" />
+    <disable_collisions link1="left_f0_0" link2="right_f0_1" reason="Never" />
+    <disable_collisions link1="left_f0_0" link2="right_f0_2" reason="Never" />
+    <disable_collisions link1="left_f0_0" link2="right_f1_0" reason="Never" />
+    <disable_collisions link1="left_f0_0" link2="right_f1_1" reason="Never" />
+    <disable_collisions link1="left_f0_0" link2="right_f1_2" reason="Never" />
+    <disable_collisions link1="left_f0_0" link2="right_f2_0" reason="Never" />
+    <disable_collisions link1="left_f0_0" link2="right_f2_1" reason="Never" />
+    <disable_collisions link1="left_f0_0" link2="right_f3_1" reason="Never" />
+    <disable_collisions link1="left_f0_0" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f0_0" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f0_1" link2="left_f0_2" reason="Adjacent" />
+    <disable_collisions link1="left_f0_1" link2="left_f2_0" reason="Never" />
+    <disable_collisions link1="left_f0_1" link2="left_f3_0" reason="Never" />
+    <disable_collisions link1="left_f0_1" link2="left_f3_1" reason="Never" />
+    <disable_collisions link1="left_f0_1" link2="left_palm" reason="Never" />
+    <disable_collisions link1="left_f0_1" link2="left_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f0_1" link2="left_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f0_1" link2="r_talus" reason="Never" />
+    <disable_collisions link1="left_f0_1" link2="right_f0_0" reason="Never" />
+    <disable_collisions link1="left_f0_1" link2="right_f0_1" reason="Never" />
+    <disable_collisions link1="left_f0_1" link2="right_f1_0" reason="Never" />
+    <disable_collisions link1="left_f0_1" link2="right_f1_1" reason="Never" />
+    <disable_collisions link1="left_f0_1" link2="right_f2_0" reason="Never" />
+    <disable_collisions link1="left_f0_1" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f0_2" link2="left_f1_0" reason="Never" />
+    <disable_collisions link1="left_f0_2" link2="left_f2_0" reason="Never" />
+    <disable_collisions link1="left_f0_2" link2="left_f3_0" reason="Never" />
+    <disable_collisions link1="left_f0_2" link2="left_f3_1" reason="Never" />
+    <disable_collisions link1="left_f0_2" link2="left_palm" reason="Never" />
+    <disable_collisions link1="left_f0_2" link2="left_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f0_2" link2="left_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f0_2" link2="r_talus" reason="Never" />
+    <disable_collisions link1="left_f0_2" link2="right_f0_0" reason="Never" />
+    <disable_collisions link1="left_f0_2" link2="right_f0_1" reason="Never" />
+    <disable_collisions link1="left_f0_2" link2="right_f0_2" reason="Never" />
+    <disable_collisions link1="left_f0_2" link2="right_f1_0" reason="Never" />
+    <disable_collisions link1="left_f0_2" link2="right_f1_1" reason="Never" />
+    <disable_collisions link1="left_f0_2" link2="right_f2_2" reason="Never" />
+    <disable_collisions link1="left_f0_2" link2="right_f3_0" reason="Never" />
+    <disable_collisions link1="left_f0_2" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f0_2" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f1_0" link2="left_f1_1" reason="Adjacent" />
+    <disable_collisions link1="left_f1_0" link2="left_f1_2" reason="Never" />
+    <disable_collisions link1="left_f1_0" link2="left_f2_0" reason="Never" />
+    <disable_collisions link1="left_f1_0" link2="left_f2_2" reason="Never" />
+    <disable_collisions link1="left_f1_0" link2="left_f3_0" reason="Never" />
+    <disable_collisions link1="left_f1_0" link2="left_f3_1" reason="Never" />
+    <disable_collisions link1="left_f1_0" link2="left_palm" reason="Adjacent" />
+    <disable_collisions link1="left_f1_0" link2="left_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f1_0" link2="left_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f1_0" link2="r_foot" reason="Never" />
+    <disable_collisions link1="left_f1_0" link2="r_larm" reason="Never" />
+    <disable_collisions link1="left_f1_0" link2="r_talus" reason="Never" />
+    <disable_collisions link1="left_f1_0" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="left_f1_0" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="left_f1_0" link2="right_f0_0" reason="Never" />
+    <disable_collisions link1="left_f1_0" link2="right_f0_1" reason="Never" />
+    <disable_collisions link1="left_f1_0" link2="right_f1_0" reason="Never" />
+    <disable_collisions link1="left_f1_0" link2="right_f1_1" reason="Never" />
+    <disable_collisions link1="left_f1_0" link2="right_f1_2" reason="Never" />
+    <disable_collisions link1="left_f1_0" link2="right_f2_2" reason="Never" />
+    <disable_collisions link1="left_f1_0" link2="right_f3_0" reason="Never" />
+    <disable_collisions link1="left_f1_0" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f1_1" link2="left_f1_2" reason="Adjacent" />
+    <disable_collisions link1="left_f1_1" link2="left_f3_0" reason="Never" />
+    <disable_collisions link1="left_f1_1" link2="left_f3_1" reason="Never" />
+    <disable_collisions link1="left_f1_1" link2="left_palm" reason="Never" />
+    <disable_collisions link1="left_f1_1" link2="left_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f1_1" link2="left_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f1_1" link2="r_talus" reason="Never" />
+    <disable_collisions link1="left_f1_1" link2="right_f0_1" reason="Never" />
+    <disable_collisions link1="left_f1_1" link2="right_f1_0" reason="Never" />
+    <disable_collisions link1="left_f1_1" link2="right_f1_2" reason="Never" />
+    <disable_collisions link1="left_f1_1" link2="right_f2_1" reason="Never" />
+    <disable_collisions link1="left_f1_1" link2="right_f3_1" reason="Never" />
+    <disable_collisions link1="left_f1_1" link2="right_f3_2" reason="Never" />
+    <disable_collisions link1="left_f1_1" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f1_1" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f1_2" link2="left_f2_0" reason="Never" />
+    <disable_collisions link1="left_f1_2" link2="left_f3_0" reason="Never" />
+    <disable_collisions link1="left_f1_2" link2="left_f3_1" reason="Never" />
+    <disable_collisions link1="left_f1_2" link2="left_palm" reason="Never" />
+    <disable_collisions link1="left_f1_2" link2="left_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f1_2" link2="left_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f1_2" link2="mtorso" reason="Never" />
+    <disable_collisions link1="left_f1_2" link2="r_larm" reason="Never" />
+    <disable_collisions link1="left_f1_2" link2="r_talus" reason="Never" />
+    <disable_collisions link1="left_f1_2" link2="right_f0_1" reason="Never" />
+    <disable_collisions link1="left_f1_2" link2="right_f1_1" reason="Never" />
+    <disable_collisions link1="left_f1_2" link2="right_f1_2" reason="Never" />
+    <disable_collisions link1="left_f1_2" link2="right_f2_1" reason="Never" />
+    <disable_collisions link1="left_f1_2" link2="right_f3_0" reason="Never" />
+    <disable_collisions link1="left_f1_2" link2="right_f3_1" reason="Never" />
+    <disable_collisions link1="left_f1_2" link2="right_f3_2" reason="Never" />
+    <disable_collisions link1="left_f1_2" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f1_2" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f2_0" link2="left_f2_1" reason="Adjacent" />
+    <disable_collisions link1="left_f2_0" link2="left_f2_2" reason="Never" />
+    <disable_collisions link1="left_f2_0" link2="left_f3_0" reason="Never" />
+    <disable_collisions link1="left_f2_0" link2="left_f3_1" reason="Never" />
+    <disable_collisions link1="left_f2_0" link2="left_palm" reason="Adjacent" />
+    <disable_collisions link1="left_f2_0" link2="left_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f2_0" link2="left_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f2_0" link2="r_larm" reason="Never" />
+    <disable_collisions link1="left_f2_0" link2="r_talus" reason="Never" />
+    <disable_collisions link1="left_f2_0" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="left_f2_0" link2="right_f0_0" reason="Never" />
+    <disable_collisions link1="left_f2_0" link2="right_f0_2" reason="Never" />
+    <disable_collisions link1="left_f2_0" link2="right_f1_1" reason="Never" />
+    <disable_collisions link1="left_f2_0" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f2_1" link2="left_f2_2" reason="Adjacent" />
+    <disable_collisions link1="left_f2_1" link2="left_f3_0" reason="Never" />
+    <disable_collisions link1="left_f2_1" link2="left_f3_1" reason="Never" />
+    <disable_collisions link1="left_f2_1" link2="left_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f2_1" link2="left_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f2_1" link2="r_talus" reason="Never" />
+    <disable_collisions link1="left_f2_1" link2="right_f1_0" reason="Never" />
+    <disable_collisions link1="left_f2_1" link2="right_f3_2" reason="Never" />
+    <disable_collisions link1="left_f2_1" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f2_1" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f2_2" link2="left_f3_0" reason="Never" />
+    <disable_collisions link1="left_f2_2" link2="left_f3_1" reason="Never" />
+    <disable_collisions link1="left_f2_2" link2="left_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f2_2" link2="left_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f2_2" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="left_f2_2" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="left_f2_2" link2="right_f1_0" reason="Never" />
+    <disable_collisions link1="left_f2_2" link2="right_f2_1" reason="Never" />
+    <disable_collisions link1="left_f2_2" link2="right_f3_0" reason="Never" />
+    <disable_collisions link1="left_f2_2" link2="right_f3_1" reason="Never" />
+    <disable_collisions link1="left_f2_2" link2="right_f3_2" reason="Never" />
+    <disable_collisions link1="left_f2_2" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f3_0" link2="left_f3_1" reason="Adjacent" />
+    <disable_collisions link1="left_f3_0" link2="left_f3_2" reason="Never" />
+    <disable_collisions link1="left_f3_0" link2="left_palm" reason="Adjacent" />
+    <disable_collisions link1="left_f3_0" link2="left_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f3_0" link2="left_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f3_0" link2="r_clav" reason="Never" />
+    <disable_collisions link1="left_f3_0" link2="r_farm" reason="Never" />
+    <disable_collisions link1="left_f3_0" link2="r_hand" reason="Never" />
+    <disable_collisions link1="left_f3_0" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="left_f3_0" link2="r_talus" reason="Never" />
+    <disable_collisions link1="left_f3_0" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="left_f3_0" link2="right_f0_0" reason="Never" />
+    <disable_collisions link1="left_f3_0" link2="right_f1_0" reason="Never" />
+    <disable_collisions link1="left_f3_0" link2="right_f1_2" reason="Never" />
+    <disable_collisions link1="left_f3_0" link2="right_f2_2" reason="Never" />
+    <disable_collisions link1="left_f3_0" link2="right_f3_2" reason="Never" />
+    <disable_collisions link1="left_f3_0" link2="right_palm" reason="Never" />
+    <disable_collisions link1="left_f3_0" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f3_0" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f3_1" link2="left_f3_2" reason="Adjacent" />
+    <disable_collisions link1="left_f3_1" link2="left_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f3_1" link2="r_foot" reason="Never" />
+    <disable_collisions link1="left_f3_1" link2="r_hand" reason="Never" />
+    <disable_collisions link1="left_f3_1" link2="r_larm" reason="Never" />
+    <disable_collisions link1="left_f3_1" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="left_f3_1" link2="r_talus" reason="Never" />
+    <disable_collisions link1="left_f3_1" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="left_f3_1" link2="right_f0_0" reason="Never" />
+    <disable_collisions link1="left_f3_1" link2="right_f0_1" reason="Never" />
+    <disable_collisions link1="left_f3_1" link2="right_f1_0" reason="Never" />
+    <disable_collisions link1="left_f3_1" link2="right_f3_2" reason="Never" />
+    <disable_collisions link1="left_f3_1" link2="right_palm" reason="Never" />
+    <disable_collisions link1="left_f3_1" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f3_1" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f3_2" link2="r_larm" reason="Never" />
+    <disable_collisions link1="left_f3_2" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="left_f3_2" link2="r_talus" reason="Never" />
+    <disable_collisions link1="left_f3_2" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="left_f3_2" link2="right_f0_0" reason="Never" />
+    <disable_collisions link1="left_f3_2" link2="right_f0_1" reason="Never" />
+    <disable_collisions link1="left_f3_2" link2="right_f1_0" reason="Never" />
+    <disable_collisions link1="left_f3_2" link2="right_f1_1" reason="Never" />
+    <disable_collisions link1="left_f3_2" link2="right_f1_2" reason="Never" />
+    <disable_collisions link1="left_f3_2" link2="right_f2_0" reason="Never" />
+    <disable_collisions link1="left_f3_2" link2="right_f3_0" reason="Never" />
+    <disable_collisions link1="left_f3_2" link2="right_f3_2" reason="Never" />
+    <disable_collisions link1="left_f3_2" link2="right_palm" reason="Never" />
+    <disable_collisions link1="left_f3_2" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_f3_2" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="left_palm" link2="left_palm_left_camera_frame" reason="Adjacent" />
+    <disable_collisions link1="left_palm" link2="left_palm_right_camera_frame" reason="Adjacent" />
+    <disable_collisions link1="left_palm" link2="r_larm" reason="Never" />
+    <disable_collisions link1="left_palm" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="left_palm" link2="right_f0_1" reason="Never" />
+    <disable_collisions link1="left_palm" link2="right_f1_2" reason="Never" />
+    <disable_collisions link1="left_palm" link2="right_f2_0" reason="Never" />
+    <disable_collisions link1="left_palm" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_palm" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="left_palm_left_camera_frame" link2="left_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="left_palm_left_camera_frame" link2="mtorso" reason="Never" />
+    <disable_collisions link1="left_palm_left_camera_frame" link2="r_farm" reason="Never" />
+    <disable_collisions link1="left_palm_left_camera_frame" link2="r_larm" reason="Never" />
+    <disable_collisions link1="left_palm_left_camera_frame" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="left_palm_left_camera_frame" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="left_palm_left_camera_frame" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="left_palm_left_camera_frame" link2="right_f0_0" reason="Never" />
+    <disable_collisions link1="left_palm_left_camera_frame" link2="right_f0_1" reason="Never" />
+    <disable_collisions link1="left_palm_left_camera_frame" link2="right_f0_2" reason="Never" />
+    <disable_collisions link1="left_palm_left_camera_frame" link2="right_f1_0" reason="Never" />
+    <disable_collisions link1="left_palm_left_camera_frame" link2="right_f1_2" reason="Never" />
+    <disable_collisions link1="left_palm_left_camera_frame" link2="right_f2_0" reason="Never" />
+    <disable_collisions link1="left_palm_left_camera_frame" link2="right_f2_1" reason="Never" />
+    <disable_collisions link1="left_palm_left_camera_frame" link2="right_f2_2" reason="Never" />
+    <disable_collisions link1="left_palm_left_camera_frame" link2="right_palm" reason="Never" />
+    <disable_collisions link1="left_palm_left_camera_frame" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_palm_left_camera_frame" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="left_palm_right_camera_frame" link2="r_farm" reason="Never" />
+    <disable_collisions link1="left_palm_right_camera_frame" link2="r_larm" reason="Never" />
+    <disable_collisions link1="left_palm_right_camera_frame" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="left_palm_right_camera_frame" link2="r_talus" reason="Never" />
+    <disable_collisions link1="left_palm_right_camera_frame" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="left_palm_right_camera_frame" link2="right_f0_1" reason="Never" />
+    <disable_collisions link1="left_palm_right_camera_frame" link2="right_f0_2" reason="Never" />
+    <disable_collisions link1="left_palm_right_camera_frame" link2="right_f1_1" reason="Never" />
+    <disable_collisions link1="left_palm_right_camera_frame" link2="right_f1_2" reason="Never" />
+    <disable_collisions link1="left_palm_right_camera_frame" link2="right_f2_0" reason="Never" />
+    <disable_collisions link1="left_palm_right_camera_frame" link2="right_f2_1" reason="Never" />
+    <disable_collisions link1="left_palm_right_camera_frame" link2="right_f2_2" reason="Never" />
+    <disable_collisions link1="left_palm_right_camera_frame" link2="right_f3_0" reason="Never" />
+    <disable_collisions link1="left_palm_right_camera_frame" link2="right_f3_1" reason="Never" />
+    <disable_collisions link1="left_palm_right_camera_frame" link2="right_f3_2" reason="Never" />
+    <disable_collisions link1="left_palm_right_camera_frame" link2="right_palm" reason="Never" />
+    <disable_collisions link1="left_palm_right_camera_frame" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="left_palm_right_camera_frame" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="ltorso" link2="mtorso" reason="Adjacent" />
+    <disable_collisions link1="ltorso" link2="pelvis" reason="Adjacent" />
+    <disable_collisions link1="ltorso" link2="r_clav" reason="Never" />
+    <disable_collisions link1="ltorso" link2="r_farm" reason="Never" />
+    <disable_collisions link1="ltorso" link2="r_foot" reason="Never" />
+    <disable_collisions link1="ltorso" link2="r_larm" reason="Never" />
+    <disable_collisions link1="ltorso" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="ltorso" link2="r_scap" reason="Never" />
+    <disable_collisions link1="ltorso" link2="r_talus" reason="Never" />
+    <disable_collisions link1="ltorso" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="ltorso" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="ltorso" link2="r_uleg" reason="Never" />
+    <disable_collisions link1="mtorso" link2="pelvis" reason="Never" />
+    <disable_collisions link1="mtorso" link2="r_clav" reason="Never" />
+    <disable_collisions link1="mtorso" link2="r_farm" reason="Never" />
+    <disable_collisions link1="mtorso" link2="r_foot" reason="Never" />
+    <disable_collisions link1="mtorso" link2="r_larm" reason="Never" />
+    <disable_collisions link1="mtorso" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="mtorso" link2="r_lleg" reason="Never" />
+    <disable_collisions link1="mtorso" link2="r_scap" reason="Never" />
+    <disable_collisions link1="mtorso" link2="r_talus" reason="Never" />
+    <disable_collisions link1="mtorso" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="mtorso" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="mtorso" link2="r_uleg" reason="Never" />
+    <disable_collisions link1="mtorso" link2="utorso" reason="Adjacent" />
+    <disable_collisions link1="pelvis" link2="r_clav" reason="Never" />
+    <disable_collisions link1="pelvis" link2="r_foot" reason="Never" />
+    <disable_collisions link1="pelvis" link2="r_larm" reason="Never" />
+    <disable_collisions link1="pelvis" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="pelvis" link2="r_lleg" reason="Never" />
+    <disable_collisions link1="pelvis" link2="r_scap" reason="Never" />
+    <disable_collisions link1="pelvis" link2="r_talus" reason="Never" />
+    <disable_collisions link1="pelvis" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="pelvis" link2="r_uglut" reason="Adjacent" />
+    <disable_collisions link1="r_clav" link2="r_farm" reason="Never" />
+    <disable_collisions link1="r_clav" link2="r_foot" reason="Never" />
+    <disable_collisions link1="r_clav" link2="r_hand" reason="Never" />
+    <disable_collisions link1="r_clav" link2="r_larm" reason="Never" />
+    <disable_collisions link1="r_clav" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="r_clav" link2="r_lleg" reason="Never" />
+    <disable_collisions link1="r_clav" link2="r_scap" reason="Adjacent" />
+    <disable_collisions link1="r_clav" link2="r_talus" reason="Never" />
+    <disable_collisions link1="r_clav" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="r_clav" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="r_clav" link2="r_uleg" reason="Never" />
+    <disable_collisions link1="r_clav" link2="right_f2_0" reason="Never" />
+    <disable_collisions link1="r_clav" link2="right_f2_2" reason="Never" />
+    <disable_collisions link1="r_clav" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="r_clav" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="r_clav" link2="utorso" reason="Adjacent" />
+    <disable_collisions link1="r_farm" link2="r_hand" reason="Adjacent" />
+    <disable_collisions link1="r_farm" link2="r_larm" reason="Adjacent" />
+    <disable_collisions link1="r_farm" link2="r_scap" reason="Never" />
+    <disable_collisions link1="r_farm" link2="r_talus" reason="Never" />
+    <disable_collisions link1="r_farm" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="r_farm" link2="right_f0_0" reason="Never" />
+    <disable_collisions link1="r_farm" link2="right_f0_1" reason="Never" />
+    <disable_collisions link1="r_farm" link2="right_f0_2" reason="Never" />
+    <disable_collisions link1="r_farm" link2="right_f1_0" reason="Never" />
+    <disable_collisions link1="r_farm" link2="right_f1_1" reason="Never" />
+    <disable_collisions link1="r_farm" link2="right_f1_2" reason="Never" />
+    <disable_collisions link1="r_farm" link2="right_f2_0" reason="Never" />
+    <disable_collisions link1="r_farm" link2="right_f2_1" reason="Never" />
+    <disable_collisions link1="r_farm" link2="right_f2_2" reason="Never" />
+    <disable_collisions link1="r_farm" link2="right_f3_0" reason="Never" />
+    <disable_collisions link1="r_farm" link2="right_f3_1" reason="Never" />
+    <disable_collisions link1="r_farm" link2="right_palm" reason="Never" />
+    <disable_collisions link1="r_farm" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="r_farm" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="r_foot" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="r_foot" link2="r_lleg" reason="Never" />
+    <disable_collisions link1="r_foot" link2="r_scap" reason="Never" />
+    <disable_collisions link1="r_foot" link2="r_talus" reason="Adjacent" />
+    <disable_collisions link1="r_foot" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="r_foot" link2="r_uleg" reason="Never" />
+    <disable_collisions link1="r_foot" link2="right_f0_2" reason="Never" />
+    <disable_collisions link1="r_hand" link2="r_larm" reason="Never" />
+    <disable_collisions link1="r_hand" link2="r_scap" reason="Never" />
+    <disable_collisions link1="r_hand" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="r_hand" link2="right_f0_0" reason="Never" />
+    <disable_collisions link1="r_hand" link2="right_f0_1" reason="Never" />
+    <disable_collisions link1="r_hand" link2="right_f0_2" reason="Never" />
+    <disable_collisions link1="r_hand" link2="right_f1_0" reason="Never" />
+    <disable_collisions link1="r_hand" link2="right_f1_1" reason="Never" />
+    <disable_collisions link1="r_hand" link2="right_f1_2" reason="Never" />
+    <disable_collisions link1="r_hand" link2="right_f2_0" reason="Never" />
+    <disable_collisions link1="r_hand" link2="right_f2_1" reason="Never" />
+    <disable_collisions link1="r_hand" link2="right_f2_2" reason="Never" />
+    <disable_collisions link1="r_hand" link2="right_f3_0" reason="Never" />
+    <disable_collisions link1="r_hand" link2="right_palm" reason="Adjacent" />
+    <disable_collisions link1="r_hand" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="r_hand" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="r_larm" link2="r_lglut" reason="Never" />
+    <disable_collisions link1="r_larm" link2="r_scap" reason="Never" />
+    <disable_collisions link1="r_larm" link2="r_uarm" reason="Adjacent" />
+    <disable_collisions link1="r_larm" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="r_larm" link2="right_f0_0" reason="Never" />
+    <disable_collisions link1="r_larm" link2="right_f0_1" reason="Never" />
+    <disable_collisions link1="r_larm" link2="right_f0_2" reason="Never" />
+    <disable_collisions link1="r_larm" link2="right_f1_0" reason="Never" />
+    <disable_collisions link1="r_larm" link2="right_f1_1" reason="Never" />
+    <disable_collisions link1="r_larm" link2="right_f1_2" reason="Never" />
+    <disable_collisions link1="r_larm" link2="right_f2_0" reason="Never" />
+    <disable_collisions link1="r_larm" link2="right_f2_1" reason="Never" />
+    <disable_collisions link1="r_larm" link2="right_f2_2" reason="Never" />
+    <disable_collisions link1="r_larm" link2="right_f3_0" reason="Never" />
+    <disable_collisions link1="r_larm" link2="right_f3_1" reason="Never" />
+    <disable_collisions link1="r_larm" link2="right_f3_2" reason="Never" />
+    <disable_collisions link1="r_larm" link2="right_palm" reason="Never" />
+    <disable_collisions link1="r_larm" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="r_larm" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="r_lglut" link2="r_lleg" reason="Never" />
+    <disable_collisions link1="r_lglut" link2="r_scap" reason="Never" />
+    <disable_collisions link1="r_lglut" link2="r_talus" reason="Never" />
+    <disable_collisions link1="r_lglut" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="r_lglut" link2="r_uglut" reason="Adjacent" />
+    <disable_collisions link1="r_lglut" link2="r_uleg" reason="Adjacent" />
+    <disable_collisions link1="r_lleg" link2="r_scap" reason="Never" />
+    <disable_collisions link1="r_lleg" link2="r_talus" reason="Adjacent" />
+    <disable_collisions link1="r_lleg" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="r_lleg" link2="r_uleg" reason="Adjacent" />
+    <disable_collisions link1="r_scap" link2="r_talus" reason="Never" />
+    <disable_collisions link1="r_scap" link2="r_uarm" reason="Adjacent" />
+    <disable_collisions link1="r_scap" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="r_scap" link2="right_f0_0" reason="Never" />
+    <disable_collisions link1="r_scap" link2="right_f0_1" reason="Never" />
+    <disable_collisions link1="r_scap" link2="right_f0_2" reason="Never" />
+    <disable_collisions link1="r_scap" link2="right_f1_0" reason="Never" />
+    <disable_collisions link1="r_scap" link2="right_f1_1" reason="Never" />
+    <disable_collisions link1="r_scap" link2="right_f1_2" reason="Never" />
+    <disable_collisions link1="r_scap" link2="right_f2_0" reason="Never" />
+    <disable_collisions link1="r_scap" link2="right_f2_1" reason="Never" />
+    <disable_collisions link1="r_scap" link2="right_f2_2" reason="Never" />
+    <disable_collisions link1="r_scap" link2="right_f3_0" reason="Never" />
+    <disable_collisions link1="r_scap" link2="right_palm" reason="Never" />
+    <disable_collisions link1="r_scap" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="r_scap" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="r_talus" link2="r_uarm" reason="Never" />
+    <disable_collisions link1="r_talus" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="r_talus" link2="r_uleg" reason="Never" />
+    <disable_collisions link1="r_talus" link2="right_f0_0" reason="Never" />
+    <disable_collisions link1="r_talus" link2="right_f0_1" reason="Never" />
+    <disable_collisions link1="r_talus" link2="right_f1_0" reason="Never" />
+    <disable_collisions link1="r_talus" link2="right_f1_1" reason="Never" />
+    <disable_collisions link1="r_talus" link2="right_f1_2" reason="Never" />
+    <disable_collisions link1="r_talus" link2="right_f2_0" reason="Never" />
+    <disable_collisions link1="r_talus" link2="right_f2_1" reason="Never" />
+    <disable_collisions link1="r_talus" link2="right_f3_0" reason="Never" />
+    <disable_collisions link1="r_talus" link2="right_f3_1" reason="Never" />
+    <disable_collisions link1="r_talus" link2="right_f3_2" reason="Never" />
+    <disable_collisions link1="r_talus" link2="right_palm" reason="Never" />
+    <disable_collisions link1="r_talus" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="r_talus" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="r_uarm" link2="r_uglut" reason="Never" />
+    <disable_collisions link1="r_uarm" link2="right_f0_0" reason="Never" />
+    <disable_collisions link1="r_uarm" link2="right_f0_1" reason="Never" />
+    <disable_collisions link1="r_uarm" link2="right_f0_2" reason="Never" />
+    <disable_collisions link1="r_uarm" link2="right_f1_0" reason="Never" />
+    <disable_collisions link1="r_uarm" link2="right_f1_1" reason="Never" />
+    <disable_collisions link1="r_uarm" link2="right_f1_2" reason="Never" />
+    <disable_collisions link1="r_uarm" link2="right_f2_0" reason="Never" />
+    <disable_collisions link1="r_uarm" link2="right_f2_1" reason="Never" />
+    <disable_collisions link1="r_uarm" link2="right_f2_2" reason="Never" />
+    <disable_collisions link1="r_uarm" link2="right_f3_0" reason="Never" />
+    <disable_collisions link1="r_uarm" link2="right_f3_1" reason="Never" />
+    <disable_collisions link1="r_uarm" link2="right_f3_2" reason="Never" />
+    <disable_collisions link1="r_uarm" link2="right_palm" reason="Never" />
+    <disable_collisions link1="r_uarm" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="r_uarm" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="r_uglut" link2="r_uleg" reason="Never" />
+    <disable_collisions link1="r_uglut" link2="right_f2_0" reason="Never" />
+    <disable_collisions link1="right_f0_0" link2="right_f0_1" reason="Adjacent" />
+    <disable_collisions link1="right_f0_0" link2="right_f0_2" reason="Never" />
+    <disable_collisions link1="right_f0_0" link2="right_f1_0" reason="Never" />
+    <disable_collisions link1="right_f0_0" link2="right_f1_2" reason="Never" />
+    <disable_collisions link1="right_f0_0" link2="right_f2_0" reason="Never" />
+    <disable_collisions link1="right_f0_0" link2="right_f3_0" reason="Never" />
+    <disable_collisions link1="right_f0_0" link2="right_f3_1" reason="Never" />
+    <disable_collisions link1="right_f0_0" link2="right_palm" reason="Adjacent" />
+    <disable_collisions link1="right_f0_0" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="right_f0_0" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="right_f0_1" link2="right_f0_2" reason="Adjacent" />
+    <disable_collisions link1="right_f0_1" link2="right_f2_0" reason="Never" />
+    <disable_collisions link1="right_f0_1" link2="right_f3_0" reason="Never" />
+    <disable_collisions link1="right_f0_1" link2="right_f3_1" reason="Never" />
+    <disable_collisions link1="right_f0_1" link2="right_palm" reason="Never" />
+    <disable_collisions link1="right_f0_1" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="right_f0_1" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="right_f0_2" link2="right_f1_0" reason="Never" />
+    <disable_collisions link1="right_f0_2" link2="right_f2_0" reason="Never" />
+    <disable_collisions link1="right_f0_2" link2="right_f3_0" reason="Never" />
+    <disable_collisions link1="right_f0_2" link2="right_f3_1" reason="Never" />
+    <disable_collisions link1="right_f0_2" link2="right_palm" reason="Never" />
+    <disable_collisions link1="right_f0_2" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="right_f0_2" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="right_f1_0" link2="right_f1_1" reason="Adjacent" />
+    <disable_collisions link1="right_f1_0" link2="right_f1_2" reason="Never" />
+    <disable_collisions link1="right_f1_0" link2="right_f2_0" reason="Never" />
+    <disable_collisions link1="right_f1_0" link2="right_f2_2" reason="Never" />
+    <disable_collisions link1="right_f1_0" link2="right_f3_0" reason="Never" />
+    <disable_collisions link1="right_f1_0" link2="right_f3_1" reason="Never" />
+    <disable_collisions link1="right_f1_0" link2="right_palm" reason="Adjacent" />
+    <disable_collisions link1="right_f1_0" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="right_f1_0" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="right_f1_1" link2="right_f1_2" reason="Adjacent" />
+    <disable_collisions link1="right_f1_1" link2="right_f3_0" reason="Never" />
+    <disable_collisions link1="right_f1_1" link2="right_f3_1" reason="Never" />
+    <disable_collisions link1="right_f1_1" link2="right_palm" reason="Never" />
+    <disable_collisions link1="right_f1_1" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="right_f1_1" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="right_f1_2" link2="right_f2_0" reason="Never" />
+    <disable_collisions link1="right_f1_2" link2="right_f3_0" reason="Never" />
+    <disable_collisions link1="right_f1_2" link2="right_f3_1" reason="Never" />
+    <disable_collisions link1="right_f1_2" link2="right_palm" reason="Never" />
+    <disable_collisions link1="right_f1_2" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="right_f1_2" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="right_f2_0" link2="right_f2_1" reason="Adjacent" />
+    <disable_collisions link1="right_f2_0" link2="right_f2_2" reason="Never" />
+    <disable_collisions link1="right_f2_0" link2="right_f3_0" reason="Never" />
+    <disable_collisions link1="right_f2_0" link2="right_f3_1" reason="Never" />
+    <disable_collisions link1="right_f2_0" link2="right_palm" reason="Adjacent" />
+    <disable_collisions link1="right_f2_0" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="right_f2_0" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="right_f2_1" link2="right_f2_2" reason="Adjacent" />
+    <disable_collisions link1="right_f2_1" link2="right_f3_0" reason="Never" />
+    <disable_collisions link1="right_f2_1" link2="right_f3_1" reason="Never" />
+    <disable_collisions link1="right_f2_1" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="right_f2_1" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="right_f2_2" link2="right_f3_0" reason="Never" />
+    <disable_collisions link1="right_f2_2" link2="right_f3_1" reason="Never" />
+    <disable_collisions link1="right_f2_2" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="right_f2_2" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="right_f3_0" link2="right_f3_1" reason="Adjacent" />
+    <disable_collisions link1="right_f3_0" link2="right_f3_2" reason="Never" />
+    <disable_collisions link1="right_f3_0" link2="right_palm" reason="Adjacent" />
+    <disable_collisions link1="right_f3_0" link2="right_palm_left_camera_frame" reason="Never" />
+    <disable_collisions link1="right_f3_0" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="right_f3_1" link2="right_f3_2" reason="Adjacent" />
+    <disable_collisions link1="right_f3_1" link2="right_palm_right_camera_frame" reason="Never" />
+    <disable_collisions link1="right_palm" link2="right_palm_left_camera_frame" reason="Adjacent" />
+    <disable_collisions link1="right_palm" link2="right_palm_right_camera_frame" reason="Adjacent" />
+    <disable_collisions link1="right_palm_left_camera_frame" link2="right_palm_right_camera_frame" reason="Never" />
+</robot>

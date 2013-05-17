@@ -1,0 +1,8 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: ""
+    relative_path: /usr/share/drcsim-2.5/gazebo_models/atlas_description/atlas_sandia_hands/atlas_sandia_hands.urdf
+  SRDF:
+    relative_path: config/atlas.srdf
+  CONFIG:
+    generated_timestamp: 1368739314
