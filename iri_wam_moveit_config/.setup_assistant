@@ -1,0 +1,8 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: iri_wam_description
+    relative_path: urdf/wam.urdf
+  SRDF:
+    relative_path: config/iri_wam.srdf
+  CONFIG:
+    generated_timestamp: 1373039159
