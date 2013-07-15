@@ -17,8 +17,6 @@
         <joint name="left_w0" />
         <joint name="left_w1" />
         <joint name="left_w2" />
-        <joint name="left_hand" />
-        <joint name="left_endpoint" />
     </group>
     <group name="right_arm">
         <joint name="right_s0" />
