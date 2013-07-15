@@ -17,6 +17,8 @@
         <joint name="left_w0" />
         <joint name="left_w1" />
         <joint name="left_w2" />
+        <joint name="left_hand" />
+        <joint name="left_endpoint" />
     </group>
     <group name="right_arm">
         <joint name="right_s0" />
@@ -26,6 +28,8 @@
         <joint name="right_w0" />
         <joint name="right_w1" />
         <joint name="right_w2" />
+        <joint name="right_hand" />
+        <joint name="right_endpoint" />
     </group>
     <group name="both_arms">
         <group name="right_arm" />
@@ -58,7 +62,7 @@
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="left_hand_eef" parent_link="left_gripper" group="left_hand" parent_group="left_arm" />
-    <end_effector name="right_hand_eef" parent_link="right_wrist" group="right_hand" parent_group="right_arm" />
+    <end_effector name="right_hand_eef" parent_link="right_gripper" group="right_hand" parent_group="right_arm" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="collision_head_link_1" link2="collision_head_link_2" reason="Adjacent" />
     <disable_collisions link1="collision_head_link_1" link2="head" reason="Never" />
