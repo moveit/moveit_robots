@@ -1,0 +1,51 @@
+controller_list:
+  - name: rarm_controller
+    action_ns: follow_joint_trajectory_action
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - r_arm_usy
+      - r_arm_shx
+      - r_arm_ely
+      - r_arm_elx
+      - r_arm_uwy
+      - r_arm_mwx
+  - name: larm_controller
+    action_ns: follow_joint_trajectory_action
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - l_arm_usy
+      - l_arm_shx
+      - l_arm_ely
+      - l_arm_elx
+      - l_arm_uwy
+      - l_arm_mwx
+  - name: rarm_torso_controller
+    action_ns: follow_joint_trajectory_action
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - r_arm_usy
+      - r_arm_shx
+      - r_arm_ely
+      - r_arm_elx
+      - r_arm_uwy
+      - r_arm_mwx
+      - back_lbz
+      - back_mby
+      - back_ubx
+  - name: larm_torso_controller
+    action_ns: follow_joint_trajectory_action
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - l_arm_usy
+      - l_arm_shx
+      - l_arm_ely
+      - l_arm_elx
+      - l_arm_uwy
+      - l_arm_mwx
+      - back_lbz
+      - back_mby
+      - back_ubx
