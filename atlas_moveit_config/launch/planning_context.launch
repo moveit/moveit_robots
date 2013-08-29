@@ -3,7 +3,7 @@
   <arg name="load_robot_description" default="false"/>
 
   <!-- Load universal robotic description format (URDF) -->
-  <param if="$(arg load_robot_description)" name="robot_description" textfile="/usr/share/drcsim-2.5/gazebo_models/atlas_description/atlas_sandia_hands/atlas_sandia_hands.urdf" />
+  <param if="$(arg load_robot_description)" name="robot_description" textfile="$(find atlas_sandia_hands)/atlas_sandia_hands.urdf" />
       
   <!-- The semantic description that corresponds to the URDF -->
   <param name="robot_description_semantic" textfile="$(find atlas_moveit_config)/config/atlas.srdf" />
