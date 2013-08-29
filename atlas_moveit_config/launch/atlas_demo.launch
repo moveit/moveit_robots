@@ -1,0 +1,20 @@
+<launch>
+  <include file="$(find atlas_moveit_config)/launch/planning_context.launch">
+    <!-- robot_description should already be loaded-->
+    <arg name="load_robot_description" value="false"/>
+  </include>
+
+  <!--node pkg="tf" type="static_transform_publisher" name="virtual_joint_broadcaster_0" args="0 0 0 0 0 0 world pelvis 100" /-->
+  <!--node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" /-->
+
+  <include file="$(find atlas_moveit_config)/launch/move_group.launch">
+    <!-- trajectory actions should be prepared -->
+    <arg name="allow_trajectory_execution" value="true"/>
+  </include>
+
+  <include file="$(find atlas_moveit_config)/launch/moveit_rviz.launch">
+    <arg name="config" value="true"/>
+  </include>
+
+  <include file="$(find atlas_moveit_config)/launch/default_warehouse_db.launch" />
+</launch>
