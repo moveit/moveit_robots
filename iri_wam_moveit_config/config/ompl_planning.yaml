@@ -27,7 +27,7 @@ arm:
     - KPIECEkConfigDefault
     - BKPIECEkConfigDefault
     - RRTStarkConfigDefault
-  projection_evaluator: joints(wam_joint_1,wam_joint_2)
+  projection_evaluator: joints(iri_wam_joint_1,iri_wam_joint_2)
   longest_valid_segment_fraction: 0.05
 arm_gripper:
   planner_configs:
