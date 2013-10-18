@@ -49,6 +49,53 @@
     <group name="base">
         <joint name="world_joint" />
     </group>
+    <!-- -->
+    <group name="right_arm_base">
+        <group name="right_arm" />
+        <group name="base" />
+    </group>
+    <group name="right_arm_torso">
+        <group name="right_arm" />
+        <group name="torso" />
+    </group>
+    <group name="left_arm_torso">
+        <group name="right_arm" />
+        <group name="torso" />
+    </group>
+    <group name="arms">
+        <group name="left_arm" />
+        <group name="right_arm" />
+    </group>
+    <group name="arms_base">
+        <group name="arms" />
+        <group name="base" />
+    </group>
+    <group name="legs">
+        <group name="left_leg" />
+        <group name="right_leg" />
+    </group>
+    <group name="legs_base">
+        <group name="base" />
+        <group name="legs" />
+    </group>
+    <group name="upper_body_fixed">
+        <group name="arms" />
+        <group name="torso" />
+    </group>
+    <group name="upper_body">
+        <group name="base" />
+        <group name="upper_body_fixed" />
+    </group>
+    <group name="whole_body_fixed">
+        <group name="arms" />
+        <group name="legs" />
+        <group name="torso" />
+    </group>
+    <group name="whole_body">
+        <group name="base" />
+        <group name="whole_body_fixed" />
+    </group>
+    <!-- -->
     <group name="right_hand">
         <joint name="right_sandia_hand_joint" />
         <joint name="right_f0_base" />
@@ -123,7 +170,7 @@
     <end_effector name="right_gripper" parent_link="r_hand" group="right_hand" />
     <end_effector name="left_gripper" parent_link="l_hand" group="left_hand" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
-    <virtual_joint name="world_joint" type="floating" parent_frame="pelvis" child_link="pelvis" />
+    <virtual_joint name="world_joint" type="floating" parent_frame="world" child_link="pelvis" />
     <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
     <passive_joint name="world_joint" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
