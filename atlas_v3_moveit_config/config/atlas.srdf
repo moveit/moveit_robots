@@ -175,8 +175,10 @@
         <joint name="left_palm_right_camera_optical_frame_joint" />
     </group>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <!--
     <end_effector name="right_gripper" parent_link="r_hand" group="right_hand" />
     <end_effector name="left_gripper" parent_link="l_hand" group="left_hand" />
+    -->
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="world_joint" type="floating" parent_frame="world" child_link="pelvis" />
     <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
