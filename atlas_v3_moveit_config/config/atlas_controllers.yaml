@@ -51,3 +51,9 @@ controller_list:
       - back_bkz
       - back_bky
       - back_bkx
+  - name: head_controller
+    action_ns: follow_joint_trajectory_action
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - neck_ry
