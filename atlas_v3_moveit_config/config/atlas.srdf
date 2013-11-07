@@ -42,7 +42,8 @@
         <joint name="l_leg_akx" />
     </group>
     <group name="neck">
-      <chain base_link="utorso" tip_link="head" />
+        <!--chain tag is needed for detecting end_effector -->
+        <chain base_link="utorso" tip_link="head" />
     </group>
     <group name="torso">
         <joint name="back_bkz" />
