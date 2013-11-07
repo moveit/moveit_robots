@@ -254,3 +254,8 @@ joint_limits:
     max_velocity: 12
     has_acceleration_limits: true
     max_acceleration: 2.4
+  neck_ry:
+    has_velocity_limits: true
+    max_velocity: 1.0
+    has_acceleration_limits: true
+    max_acceleration: 2.4
