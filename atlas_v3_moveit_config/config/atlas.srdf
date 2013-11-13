@@ -58,12 +58,16 @@
         <group name="right_arm" />
         <group name="base" />
     </group>
+    <group name="left_arm_base">
+        <group name="left_arm" />
+        <group name="base" />
+    </group>
     <group name="right_arm_torso">
         <group name="right_arm" />
         <group name="torso" />
     </group>
     <group name="left_arm_torso">
-        <group name="right_arm" />
+        <group name="left_arm" />
         <group name="torso" />
     </group>
     <group name="arms">
