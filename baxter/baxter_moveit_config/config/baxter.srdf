@@ -210,6 +210,7 @@
     <disable_collisions link1="left_upper_forearm" link2="left_upper_forearm_visual" reason="Default" />
     <disable_collisions link1="left_upper_forearm" link2="left_wrist" reason="Never" />
     <disable_collisions link1="left_upper_forearm" link2="pedestal" reason="Never" />
+    <disable_collisions link1="left_upper_forearm_visual" link2="torso" reason="Never" />
     <disable_collisions link1="left_upper_shoulder" link2="pedestal" reason="Never" />
     <disable_collisions link1="left_upper_shoulder" link2="right_lower_elbow" reason="Never" />
     <disable_collisions link1="left_upper_shoulder" link2="right_lower_shoulder" reason="Never" />
@@ -319,6 +320,7 @@
     <disable_collisions link1="right_upper_elbow_visual" link2="pedestal" reason="Never" />
     <disable_collisions link1="right_upper_forearm" link2="right_upper_forearm_visual" reason="Default" />
     <disable_collisions link1="right_upper_forearm" link2="right_wrist" reason="Never" />
+    <disable_collisions link1="right_upper_forearm_visual" link2="torso" reason="Never" />
     <disable_collisions link1="right_upper_shoulder" link2="screen" reason="Never" />
     <disable_collisions link1="right_upper_shoulder" link2="sonar_ring" reason="Never" />
     <disable_collisions link1="right_upper_shoulder" link2="torso" reason="Adjacent" />
