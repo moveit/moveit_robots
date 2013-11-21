@@ -1,7 +1,7 @@
 <package>
 
   <name>baxter_moveit_config</name>
-  <version>0.2.0</version>
+  <version>0.7.0</version>
   <description>
      An automatically generated package with all the configuration and launch files for using the baxter with the MoveIt Motion Planning Framework
   </description>
@@ -10,9 +10,9 @@
 
   <license>BSD</license>
 
-  <url type="website">http://moveit.ros.org/</url>
-  <url type="bugtracker">https://github.com/ros-planning/moveit_setup_assistant/issues</url>
-  <url type="repository">https://github.com/ros-planning/moveit_setup_assistant</url>
+  <url type="website">http://rethinkrobotics.com/sdk</url>
+  <url type="bugtracker">https://github.com/RethinkRobotics/baxter/issues</url>
+  <url type="repository">https://github.com/ros-planning/moveit_robots</url>
 
   <run_depend>moveit_ros_move_group</run_depend>
   <build_depend>baxter_description</build_depend>
