@@ -7,7 +7,7 @@
 		
 		<!-- Users update this to set transform between camera and robot -->
 		<node pkg="tf" type="static_transform_publisher" name="camera_link_broadcaster"
-		args="0.66 0.67 -0.26 -1.57 0.0 0.0 /torso /camera_link 100" />
+		args="1.0 0.0 0.0 0.0 0.0 0.0 /torso /camera_link 100" />
 		
 		<!-- octomap parameters for moveit -->
 		<param name="octomap_frame" type="string" value="camera_link" />
