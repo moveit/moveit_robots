@@ -23,8 +23,10 @@
     <arg name="moveit_controller_manager" value="baxter" /> 
     <arg name="moveit_manage_controllers" value="true" />
   </include>
-
+  
+  <arg name="kinect" default="false" />
   <include ns="move_group" file="$(find baxter_moveit_config)/launch/sensor_manager.launch" if="$(arg allow_trajectory_execution)">
+    <arg name="kinect" value="$(arg kinect)" />
     <arg name="moveit_sensor_manager" value="baxter" /> 
   </include>
 
