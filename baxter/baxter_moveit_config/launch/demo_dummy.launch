@@ -3,12 +3,13 @@
     <arg name="load_robot_description" value="true"/>
   </include>
 
-  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
-    <param name="/use_gui" value="false"/>
+  <node name="dummy_joint_trajectory_controller" pkg="baxter_moveit_config" type="dummy_joint_trajectory_controller">
+    <remap from="/joint_states" to="/robot/joint_states" />
   </node>
   
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen"/>
-
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen">
+    <remap from="/joint_states" to="/robot/joint_states" />
+  </node>
   <arg name="kinect" default="false" />
   <include file="$(find baxter_moveit_config)/launch/move_group.launch">
     <arg name="kinect" value="$(arg kinect)" />
