@@ -1,0 +1,8 @@
+<launch>
+  <!-- Explicitly run moveit for baxter with the xtion -->
+  <!-- Calls the demo_baxter launch file with the xtion argument set to true -->
+  <include file="$(find baxter_moveit_config)/launch/demo_baxter.launch">
+    <arg name="xtion" value="true" />
+  </include>
+
+</launch>

@@ -11,8 +11,10 @@
   <!--node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" /-->
 
   <arg name="kinect" default="false" />
+  <arg name="xtion" default="false" />
   <include file="$(find baxter_moveit_config)/launch/move_group.launch">
     <arg name="kinect" value="$(arg kinect)" />
+    <arg name="xtion" value="$(arg xtion)" />
     <arg name="allow_trajectory_execution" value="true"/>
   </include>
 
