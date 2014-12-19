@@ -6,9 +6,11 @@
   <arg name="moveit_sensor_manager" default="baxter" />
   <arg name="kinect" default="false" />
   <arg name="xtion" default="false" />
+  <arg name="camera_link_pose" default="0.15 0.075 0.5 0.0 0.7854 0.0"/>
   <include file="$(find baxter_moveit_config)/launch/$(arg moveit_sensor_manager)_moveit_sensor_manager.launch" >
     <arg name="kinect" value="$(arg kinect)" />
     <arg name="xtion" value="$(arg xtion)" />
+    <arg name="camera_link_pose" default="$(arg camera_link_pose)"/>
   </include>
   
 </launch>

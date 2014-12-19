@@ -1,4 +1,5 @@
 <launch>
+     <arg name="camera_link_pose" default="0.15 0.075 0.5 0.0 0.7854 0.0"/>
      <arg name="kinect" default="false"/>
      <group if="$(arg kinect)" >
          <!-- launch openni to talk to kinect -->
@@ -9,7 +10,7 @@
          </include>
          <!-- Users update this to set transform between camera and robot -->
          <node pkg="tf" type="static_transform_publisher" name="camera_link_broadcaster"
-               args="1.0 0.0 0.0 0.0 0.0 0.0 /torso /camera_link 100" />
+               args="$(arg camera_link_pose) /torso /camera_link 100" />
 
          <!-- octomap parameters for moveit -->
          <group ns="move_group" >
@@ -29,7 +30,7 @@
          <!-- Users update this to set transform between camera and robot -->
          <!-- This example has the Xtion mounted to the chest of the robot -->
          <node pkg="tf" type="static_transform_publisher" name="camera_link_broadcaster"
-               args="0.15 0.075 0.5 0.0 0.7854 0.0 /torso /camera_link 100" />
+               args="$(arg camera_link_pose) /torso /camera_link 100" />
 
          <!-- octomap parameters for moveit -->
          <group ns="move_group" >

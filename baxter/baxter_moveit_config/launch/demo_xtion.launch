@@ -1,8 +1,10 @@
 <launch>
   <!-- Explicitly run moveit for baxter with the xtion -->
   <!-- Calls the demo_baxter launch file with the xtion argument set to true -->
+  <arg name="camera_link_pose" default="0.15 0.075 0.5 0.0 0.7854 0.0"/>
   <include file="$(find baxter_moveit_config)/launch/demo_baxter.launch">
     <arg name="xtion" value="true" />
+    <arg name="camera_link_pose" default="$(arg camera_link_pose)"/>
   </include>
 
 </launch>
