@@ -1,4 +1,5 @@
 <launch>
+  <arg name="rviz_config" default="$(find baxter_moveit_config)/launch/moveit.rviz" />
 
   <arg name="debug" default="false" />
   <arg unless="$(arg debug)" name="launch_prefix" value="" />
@@ -6,7 +7,7 @@
 
   <arg name="config" default="false" />
   <arg unless="$(arg config)" name="command_args" value="" />
-  <arg     if="$(arg config)" name="command_args" value="-d $(find baxter_moveit_config)/launch/moveit.rviz" />
+  <arg     if="$(arg config)" name="command_args" value="-d $(arg rviz_config)" />
   
   <node name="$(anon rviz)" launch-prefix="$(arg launch_prefix)" pkg="rviz" type="rviz" respawn="false"
 	args="$(arg command_args)" output="screen">
