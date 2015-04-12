@@ -7,6 +7,7 @@
 
   <arg name="camera_link_pose" default="0.15 0.075 0.5 0.0 0.7854 0.0"/>
   <include file="$(find baxter_moveit_config)/launch/demo_baxter.launch">
+    <arg name="launch_sensor" value="true"/>
     <arg name="xtion" value="true" />
     <arg name="camera_link_pose" default="$(arg camera_link_pose)"/>
     <arg name="config" value="$(arg config)" />
