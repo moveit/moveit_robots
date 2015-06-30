@@ -28,6 +28,7 @@ include_directories(include)
 
 set(IKFAST_LIBRARY_NAME baxter_left_arm_moveit_ikfast_plugin)
 
+set(LAPACK_lapack_WORKS TRUE)
 find_package(LAPACK REQUIRED)
 
 add_library(${IKFAST_LIBRARY_NAME} src/baxter_left_arm_ikfast_moveit_plugin.cpp)
