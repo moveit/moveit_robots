@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="default_gripper">
+    <xacro:macro name="default_gripper" params="side">
+    <disable_collisions link1="head" link2="${side}_gripper" reason="Never" />
+    <disable_collisions link1="${side}_gripper" link2="${side}_hand" reason="Adjacent" />
+    <disable_collisions link1="${side}_gripper" link2="${side}_hand_camera" reason="Never" />
+    <disable_collisions link1="${side}_gripper" link2="${side}_hand_range" reason="Never" />
+    <disable_collisions link1="${side}_gripper" link2="${side}_lower_elbow" reason="Never" />
+    <disable_collisions link1="${side}_gripper" link2="${side}_lower_forearm" reason="Never" />
+    <disable_collisions link1="${side}_gripper" link2="${side}_upper_elbow_visual" reason="Never" />
+    <disable_collisions link1="${side}_gripper" link2="${side}_upper_forearm" reason="Never" />
+    <disable_collisions link1="${side}_gripper" link2="${side}_upper_forearm_visual" reason="Never" />
+    <disable_collisions link1="${side}_gripper" link2="${side}_wrist" reason="Never" />
+    <disable_collisions link1="${side}_gripper" link2="${side}_hand_camera" reason="Never" />
+    <disable_collisions link1="${side}_gripper" link2="${side}_hand_range" reason="Never" />
+    <disable_collisions link1="${side}_gripper" link2="screen" reason="Never" />
+    <disable_collisions link1="${side}_gripper" link2="sonar_ring" reason="Never" />
+
+    <disable_collisions link1="${side}_gripper_base" link2="${side}_hand_accelerometer" reason="Never" />
+    <disable_collisions link1="${side}_hand"         link2="${side}_gripper_base" reason="Adjacent" />
+    <disable_collisions link1="${side}_wrist"        link2="${side}_gripper_base" reason="Never" />
+    <disable_collisions link1="${side}_gripper_base" link2="${side}_hand" reason="Default" />
+    <disable_collisions link1="${side}_gripper_base" link2="${side}_hand_camera" reason="Default" />
+    <disable_collisions link1="${side}_gripper_base" link2="${side}_hand_range" reason="Default" />
+    <disable_collisions link1="${side}_gripper_base" link2="${side}_lower_elbow" reason="Never" />
+    <disable_collisions link1="${side}_gripper_base" link2="${side}_lower_forearm" reason="Never" />
+    <disable_collisions link1="${side}_gripper_base" link2="${side}_upper_elbow_visual" reason="Never" />
+    <disable_collisions link1="${side}_gripper_base" link2="${side}_upper_forearm" reason="Never" />
+    <disable_collisions link1="${side}_gripper_base" link2="${side}_upper_forearm_visual" reason="Never" />
+    <disable_collisions link1="${side}_gripper_base" link2="${side}_wrist" reason="Never" />
+    <disable_collisions link1="${side}_gripper" link2="${side}_gripper_base" reason="Default" />
+
+    <disable_collisions link1="${side}_gripper_base" link2="pedestal" reason="Default" />
+    <disable_collisions link1="${side}_gripper"      link2="pedestal" reason="Never" />
+
+    </xacro:macro>
+</robot>

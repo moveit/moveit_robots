@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<robot name="baxter" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:arg name="left_tip_name" default="left_gripper"/>
+  <xacro:arg name="right_tip_name" default="right_gripper"/>
+  <xacro:include filename="$(find baxter_moveit_config)/config/baxter_base.srdf.xacro" />
+  <xacro:baxter_base left_tip_name="$(arg left_tip_name)" right_tip_name="$(arg right_tip_name)"/>
+  <!--Left End Effector Collisions-->
+  <xacro:include filename="$(find baxter_moveit_config)/config/default_gripper.srdf.xacro" />
+  <xacro:default_gripper side="left"/>
+  <xacro:arg name="left_electric_gripper" default="false"/>
+  <xacro:if value="$(arg left_electric_gripper)">
+    <xacro:include filename="$(find baxter_moveit_config)/config/rethink_electric_gripper.srdf.xacro" />
+    <xacro:rethink_electric_gripper side="left"/>
+  </xacro:if>
+  <!--Right End Effector Collisions-->
+  <xacro:include filename="$(find baxter_moveit_config)/config/default_gripper.srdf.xacro" />
+  <xacro:default_gripper side="right"/>
+  <xacro:arg name="right_electric_gripper" default="false"/>
+  <xacro:if value="$(arg right_electric_gripper)">
+    <xacro:include filename="$(find baxter_moveit_config)/config/rethink_electric_gripper.srdf.xacro" />
+    <xacro:rethink_electric_gripper side="right"/>
+  </xacro:if>
+</robot>
