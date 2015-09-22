@@ -1,0 +1,261 @@
+joint_limits:
+  l_leg_hpy:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  r_leg_kny:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  left_f1_j2:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: true
+    max_acceleration: 0.2
+  l_arm_shx:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  r_arm_wrx:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  r_leg_akx:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  l_arm_wrx:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  l_arm_wry:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  left_f2_j2:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: true
+    max_acceleration: 0.2
+  left_f3_j1:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: true
+    max_acceleration: 0.2
+  right_f1_j1:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: true
+    max_acceleration: 0.2
+  r_arm_elx:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  left_f2_j0:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: true
+    max_acceleration: 0.2
+  left_f1_j0:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: true
+    max_acceleration: 0.2
+  l_arm_shy:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  r_arm_shx:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  right_f2_j1:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: true
+    max_acceleration: 0.2
+  right_f0_j2:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: true
+    max_acceleration: 0.2
+  l_leg_hpz:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  right_f3_j1:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: true
+    max_acceleration: 0.2
+  right_f2_j0:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: true
+    max_acceleration: 0.2
+  right_f3_j2:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: true
+    max_acceleration: 0.2
+  right_f2_j2:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: true
+    max_acceleration: 0.2
+  left_f0_j1:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: true
+    max_acceleration: 0.2
+  right_f3_j0:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: true
+    max_acceleration: 0.2
+  left_f2_j1:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: true
+    max_acceleration: 0.2
+  r_leg_aky:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  l_leg_aky:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  back_bkz:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  r_arm_ely:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  left_f3_j0:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: true
+    max_acceleration: 0.2
+  r_leg_hpz:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  l_leg_akx:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  r_leg_hpx:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  right_f1_j0:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: true
+    max_acceleration: 0.2
+  l_leg_kny:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  right_f1_j2:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: true
+    max_acceleration: 0.2
+  left_f0_j0:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: true
+    max_acceleration: 0.2
+  right_f0_j0:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: true
+    max_acceleration: 0.2
+  r_arm_wry:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  r_arm_shy:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  l_arm_elx:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  left_f0_j2:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: true
+    max_acceleration: 0.2
+  back_bkx:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  l_leg_hpx:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  l_arm_ely:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  r_leg_hpy:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  left_f3_j2:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: true
+    max_acceleration: 0.2
+  right_f0_j1:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: true
+    max_acceleration: 0.2
+  left_f1_j1:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: true
+    max_acceleration: 0.2
+  back_bky:
+    has_velocity_limits: true
+    max_velocity: 12
+    has_acceleration_limits: true
+    max_acceleration: 2.4
+  neck_ry:
+    has_velocity_limits: true
+    max_velocity: 1.0
+    has_acceleration_limits: true
+    max_acceleration: 2.4

@@ -1,0 +1,59 @@
+controller_list:
+  - name: rarm_controller
+    action_ns: follow_joint_trajectory_action
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - r_arm_shy
+      - r_arm_shx
+      - r_arm_ely
+      - r_arm_elx
+      - r_arm_wry
+      - r_arm_wrx
+  - name: larm_controller
+    action_ns: follow_joint_trajectory_action
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - l_arm_shy
+      - l_arm_shx
+      - l_arm_ely
+      - l_arm_elx
+      - l_arm_wry
+      - l_arm_wrx
+  - name: rleg_controller
+    action_ns: follow_joint_trajectory_action
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - r_leg_hpz
+      - r_leg_hpx
+      - r_leg_hpy
+      - r_leg_kny
+      - r_leg_aky
+      - r_leg_akx
+  - name: lleg_controller
+    action_ns: follow_joint_trajectory_action
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - l_leg_hpz
+      - l_leg_hpx
+      - l_leg_hpy
+      - l_leg_kny
+      - l_leg_aky
+      - l_leg_akx
+  - name: torso_controller
+    action_ns: follow_joint_trajectory_action
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - back_bkz
+      - back_bky
+      - back_bkx
+  - name: head_controller
+    action_ns: follow_joint_trajectory_action
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - neck_ry

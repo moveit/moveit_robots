@@ -1,0 +1,32 @@
+<launch>
+  <arg name="config" default="true"/>
+  <arg name="rviz_config" default="$(find baxter_moveit_config)/launch/moveit.rviz" />
+
+  <include file="$(find baxter_moveit_config)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="true"/>
+  </include>
+
+  <node name="dummy_joint_trajectory_controller" pkg="baxter_moveit_config" type="dummy_joint_trajectory_controller">
+    <remap from="/joint_states" to="/robot/joint_states" />
+  </node>
+  
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen">
+    <remap from="/joint_states" to="/robot/joint_states" />
+  </node>
+  <arg name="kinect" default="false" />
+  <arg name="xtion" default="false" />
+  <arg name="camera_link_pose" default="0.15 0.075 0.5 0.0 0.7854 0.0"/>
+  <include file="$(find baxter_moveit_config)/launch/move_group.launch">
+    <arg name="kinect" value="$(arg kinect)" />
+    <arg name="xtion" value="$(arg xtion)" />
+    <arg name="camera_link_pose" default="$(arg camera_link_pose)"/>
+    <arg name="allow_trajectory_execution" value="true"/>
+  </include>
+
+  <include file="$(find baxter_moveit_config)/launch/moveit_rviz.launch">
+    <arg name="config" value="$(arg config)" />
+    <arg name="rviz_config" value="$(arg rviz_config)" />
+  </include>
+
+  <include file="$(find baxter_moveit_config)/launch/default_warehouse_db.launch" />
+</launch>

@@ -1,0 +1,26 @@
+<package>
+
+  <name>baxter_moveit_config</name>
+  <version>1.0.2</version>
+  <description>
+     An automatically generated package with all the configuration and launch files for using the baxter with the MoveIt Motion Planning Framework
+  </description>
+  <author>Rethink Robotics Inc.</author>
+  <maintainer email="assistant@moveit.ros.org">MoveIt Setup Assistant</maintainer>
+  <maintainer email="rsdk.support@rethinkrobotics.com">Rethink Robotics Inc.</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">http://sdk.rethinkrobotics.com/wiki/MoveIt_Tutorial</url>
+  <url type="bugtracker">https://github.com/ros-planning/moveit_robots/issues</url>
+  <url type="repository">https://github.com/ros-planning/moveit_robots</url>
+
+  <run_depend>moveit_ros_move_group</run_depend>
+  <build_depend>baxter_description</build_depend>
+  <run_depend>baxter_description</run_depend>
+  <run_depend>moveit_simple_controller_manager</run_depend>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+  
+</package>

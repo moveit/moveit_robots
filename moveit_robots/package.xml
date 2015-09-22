@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package>
+  <name>moveit_robots</name>
+  <version>1.0.2</version>
+  <description>moveit_robots meta-package contains multiple robots moveit configuration packages.</description>
+
+  <maintainer email="robot.moveit@gmail.com">Sachin Chitta</maintainer>
+  <author>Isaac I.Y. Saito</author>
+  <license>BSD</license>
+  <url type="website">http://wiki.ros.org/moveit_robots</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>atlas_moveit_config</run_depend>
+  <run_depend>atlas_v3_moveit_config</run_depend>
+  <run_depend>baxter_ikfast_left_arm_plugin</run_depend>
+  <run_depend>baxter_ikfast_right_arm_plugin</run_depend>
+  <run_depend>baxter_moveit_config</run_depend>
+  <run_depend>clam_moveit_config</run_depend>
+  <run_depend>r2_moveit_generated</run_depend>
+
+  <export><metapackage/></export>
+</package>

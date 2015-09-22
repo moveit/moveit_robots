@@ -8,5 +8,5 @@
   <arg name="use_controller_manager" default="false" />
   <param name="use_controller_manager" value="$(arg use_controller_manager)" />
 
-  <rosparam file="$(find atlas_moveit_config)/config/atlas_controllers.yaml"/>
+  <rosparam file="$(find atlas_v3_moveit_config)/config/atlas_controllers.yaml"/>
 </launch>

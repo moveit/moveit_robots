@@ -3,7 +3,7 @@ moveit_robots
 
 This repository contains configuration packages for different robots using MoveIt!
 
-GUIDELINES
+Guidelines
 ---------
 
 Add your robot's MoveIt configuration package to the root of this repository. 
