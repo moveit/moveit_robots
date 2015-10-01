@@ -1,15 +1,16 @@
 <launch>
      <arg name="camera_link_pose" default="0.15 0.075 0.5 0.0 0.7854 0.0"/>
+     <arg name="launch_sensor" default="true" />
      <arg name="kinect" default="false"/>
      <group if="$(arg kinect)" >
          <!-- launch openni to talk to kinect -->
-         <include file="$(find freenect_launch)/launch/freenect.launch">
+         <include if="$(arg launch_sensor)" file="$(find freenect_launch)/launch/freenect.launch">
              <!-- These args are workarounds for tf_prefix issues in freenect.launch -->
              <arg name="rgb_frame_id" value="camera_rgb_optical_frame"/>
              <arg name="depth_frame_id" value="camera_depth_optical_frame"/>
          </include>
          <!-- Users update this to set transform between camera and robot -->
-         <node pkg="tf" type="static_transform_publisher" name="camera_link_broadcaster"
+         <node  if="$(arg launch_sensor)" pkg="tf" type="static_transform_publisher" name="camera_link_broadcaster"
                args="$(arg camera_link_pose) /torso /camera_link 100" />
 
          <!-- octomap parameters for moveit -->
@@ -22,14 +23,14 @@
      <arg name="xtion" default="false"/>
      <group if="$(arg xtion)" >
          <!-- launch openni to talk to xtion -->
-         <include file="$(find openni_launch)/launch/openni.launch">
+         <include  if="$(arg launch_sensor)" file="$(find openni_launch)/launch/openni.launch">
              <!-- These args are workarounds for tf_prefix issues in openni.launch -->
              <arg name="rgb_frame_id" value="camera_rgb_optical_frame" />
              <arg name="depth_frame_id" value="camera_depth_optical_frame" />
          </include>
          <!-- Users update this to set transform between camera and robot -->
          <!-- This example has the Xtion mounted to the chest of the robot -->
-         <node pkg="tf" type="static_transform_publisher" name="camera_link_broadcaster"
+         <node  if="$(arg launch_sensor)" pkg="tf" type="static_transform_publisher" name="camera_link_broadcaster"
                args="$(arg camera_link_pose) /torso /camera_link 100" />
 
          <!-- octomap parameters for moveit -->
