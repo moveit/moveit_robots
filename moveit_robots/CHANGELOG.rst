@@ -2,8 +2,8 @@
 Changelog for package moveit_robots
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.3 (2015-11-02)
+------------------
 * [fix] Manually move ikfast.h from include/ to include/baxter_ikfast\_{left/right}_arm_plugin/include
 * Contributors: Kei Okada
 

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>moveit_robots</name>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
   <description>moveit_robots meta-package contains multiple robots moveit configuration packages.</description>
 
   <maintainer email="robot.moveit@gmail.com">Sachin Chitta</maintainer>
