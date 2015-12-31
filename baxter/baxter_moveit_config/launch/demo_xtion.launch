@@ -1,9 +1,18 @@
+<?xml version="1.0"?>
 <launch>
   <!-- Explicitly run moveit for baxter with the xtion -->
   <!-- Calls the demo_baxter launch file with the xtion argument set to true -->
 
   <arg name="config" default="true"/>
   <arg name="rviz_config" default="$(find baxter_moveit_config)/launch/moveit.rviz" />
+  <!-- By default we do not overwrite the URDF. Change the following to true to change the default behavior -->
+  <arg name="load_robot_description" default="false"/>
+  <!-- Left and right electric gripper params. Set to true to check for collisions for their links -->
+  <arg name="right_electric_gripper" default="false"/>
+  <arg name="left_electric_gripper" default="false"/>
+  <!-- Set the kinematic tips for the left_arm and right_arm move_groups -->
+  <arg name="left_tip_name" default="left_gripper"/>
+  <arg name="right_tip_name" default="right_gripper"/>
 
   <arg name="camera_link_pose" default="0.15 0.075 0.5 0.0 0.7854 0.0"/>
   <include file="$(find baxter_moveit_config)/launch/demo_baxter.launch">
@@ -11,6 +20,11 @@
     <arg name="camera_link_pose" default="$(arg camera_link_pose)"/>
     <arg name="config" value="$(arg config)" />
     <arg name="rviz_config" value="$(arg rviz_config)" />
+    <arg name="load_robot_description" value="$(arg load_robot_description)"/>
+    <arg name="left_electric_gripper" value="$(arg left_electric_gripper)"/>
+    <arg name="right_electric_gripper" value="$(arg right_electric_gripper)"/>
+    <arg name="left_tip_name" value="$(arg left_tip_name)"/>
+    <arg name="right_tip_name" value="$(arg right_tip_name)"/>
   </include>
 
 </launch>
