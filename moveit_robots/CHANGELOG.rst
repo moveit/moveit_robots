@@ -2,8 +2,8 @@
 Changelog for package moveit_robots
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.4 (2016-01-15)
+------------------
 * [feat] Added Gripper construction Xacros for Baxter
   baxter.srdf.xacro is now the new "baxter.srdf" (the old one is
   left unchanged for backwards compatibility). The xacro creates the
