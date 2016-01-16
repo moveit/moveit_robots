@@ -2,6 +2,9 @@
 Changelog for package r2_moveit_generated
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.0.3 (2015-11-02)
 ------------------
 

@@ -2,6 +2,9 @@
 Changelog for package clam_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.0.3 (2015-11-02)
 ------------------
 
