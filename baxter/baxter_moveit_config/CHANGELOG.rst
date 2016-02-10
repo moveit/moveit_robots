@@ -2,8 +2,8 @@
 Changelog for package baxter_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.5 (2016-02-10)
+------------------
 * [fix] Update ompl_planning.yaml to set default planning config, which is supported on moveit 0.7 (`moveit_ros/pull/625 <https://github.com/ros-planning/moveit_ros/pull/625>`_)
 * Contributors: Kei Okada
 
