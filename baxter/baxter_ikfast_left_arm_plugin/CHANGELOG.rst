@@ -2,6 +2,9 @@
 Changelog for package baxter_ikfast_left_arm_plugin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.0.4 (2016-01-15)
 ------------------
 

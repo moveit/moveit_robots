@@ -2,6 +2,9 @@
 Changelog for package iri_wam_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.0.4 (2016-01-15)
 ------------------
 

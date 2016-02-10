@@ -2,6 +2,11 @@
 Changelog for package baxter_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* [fix] Update ompl_planning.yaml to set default planning config, which is supported on moveit 0.7 (`moveit_ros/pull/625 <https://github.com/ros-planning/moveit_ros/pull/625>`_)
+* Contributors: Kei Okada
+
 1.0.4 (2016-01-15)
 ------------------
 * Added Gripper construction Xacros for Baxter
