@@ -13,10 +13,10 @@
     <xacro:arg name="left_tip_name" default="left_gripper"/>
     <xacro:arg name="right_tip_name" default="right_gripper"/>
     <group name="left_arm">
-        <chain base_link="base" tip_link="$(arg left_tip_name)" />
+        <chain base_link="torso" tip_link="$(arg left_tip_name)" />
     </group>
     <group name="right_arm">
-        <chain base_link="base" tip_link="$(arg right_tip_name)" />
+        <chain base_link="torso" tip_link="$(arg right_tip_name)" />
     </group>
     <group name="both_arms">
         <group name="right_arm" />
