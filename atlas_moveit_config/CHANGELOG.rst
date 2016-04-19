@@ -2,6 +2,9 @@
 Changelog for package atlas_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.0.5 (2016-02-10)
 ------------------
 
