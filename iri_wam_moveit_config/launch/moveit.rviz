@@ -125,7 +125,7 @@ Visualization Manager:
         Start State Alpha: 1
         Start State Color: 0; 255; 0
       Planning Scene Topic: /move_group/monitored_planning_scene
-      Robot Description: robot_description
+      Robot Description: /robot_description
       Scene Geometry:
         Scene Alpha: 0.9
         Scene Color: 50; 230; 50

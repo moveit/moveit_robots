@@ -18,11 +18,17 @@
         <joint name="iri_wam_joint_6" />
         <joint name="iri_wam_joint_7" />
     </group>
-    <group name="arm_gripper">
-        <link name="iri_wam_link_tcp" />
-    </group>
     <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
     <group_state name="home" group="arm">
+        <joint name="iri_wam_joint_1" value="0" />
+        <joint name="iri_wam_joint_2" value="-1.970" />
+        <joint name="iri_wam_joint_3" value="0" />
+        <joint name="iri_wam_joint_4" value="3.1" />
+        <joint name="iri_wam_joint_5" value="0" />
+        <joint name="iri_wam_joint_6" value="-1.57" />
+        <joint name="iri_wam_joint_7" value="0" />
+    </group_state>
+    <group_state name="vertical" group="arm">
         <joint name="iri_wam_joint_1" value="0" />
         <joint name="iri_wam_joint_2" value="0" />
         <joint name="iri_wam_joint_3" value="0" />
@@ -32,7 +38,6 @@
         <joint name="iri_wam_joint_7" value="0" />
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="arm_eef" parent_link="iri_wam_link_7" group="arm_gripper" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="iri_wam_link_footprint" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
