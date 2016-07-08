@@ -43,7 +43,7 @@
   <arg name="db_path" default="$(find baxter_moveit_config)/default_warehouse_mongo_db" />
   <group if="$(arg db)">
     <include file="$(find baxter_moveit_config)/launch/default_warehouse_db.launch">
-      <arg name="db_path" value="$(arg db_path)" />
+      <arg name="moveit_warehouse_database_path" value="$(arg db_path)" />
     </include>
   </group>
 </launch>
