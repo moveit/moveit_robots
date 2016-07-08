@@ -38,5 +38,12 @@
     <arg name="rviz_config" value="$(arg rviz_config)" />
   </include>
 
-  <include file="$(find baxter_moveit_config)/launch/default_warehouse_db.launch" />
+  <!-- If this package is installed, setting 'db' as 'false' or db_path to user permission dir is required. -->
+  <arg name="db" default="true" />
+  <arg name="db_path" default="$(find baxter_moveit_config)/default_warehouse_mongo_db" />
+  <group if="$(arg db)">
+    <include file="$(find baxter_moveit_config)/launch/default_warehouse_db.launch">
+      <arg name="moveit_warehouse_database_path" value="$(arg db_path)" />
+    </include>
+  </group>
 </launch>
