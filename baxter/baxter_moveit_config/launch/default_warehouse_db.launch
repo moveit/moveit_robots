@@ -3,8 +3,9 @@
   <arg name="reset" default="false"/>
 
   <!-- Launch the warehouse with a default database location -->  
+  <arg name="db_path" default="$(find baxter_moveit_config)/default_warehouse_mongo_db" />
   <include file="$(find baxter_moveit_config)/launch/warehouse.launch">
-    <arg name="moveit_warehouse_database_path" value="$(find baxter_moveit_config)/default_warehouse_mongo_db" />
+    <arg name="moveit_warehouse_database_path" value="$(arg db_path)" />
   </include>
 
   <!-- If we want to reset the database, run this node -->
