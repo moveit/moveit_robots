@@ -1,36 +1,36 @@
 joint_limits:
   iri_wam_joint_1:
     has_velocity_limits: true
-    max_velocity: 1.0
+    max_velocity: 0.5
     has_acceleration_limits: true
-    max_acceleration: 1.0
+    max_acceleration: 0.5
   iri_wam_joint_2:
     has_velocity_limits: true
-    max_velocity: 1.0
+    max_velocity: 0.5
     has_acceleration_limits: true
-    max_acceleration: 1.0
+    max_acceleration: 0.5
   iri_wam_joint_3:
     has_velocity_limits: true
-    max_velocity: 1.0
+    max_velocity: 0.5
     has_acceleration_limits: true
-    max_acceleration: 1.0
+    max_acceleration: 0.5
   iri_wam_joint_4:
     has_velocity_limits: true
-    max_velocity: 1.0
+    max_velocity: 0.5
     has_acceleration_limits: true
-    max_acceleration: 1.0
+    max_acceleration: 0.5
   iri_wam_joint_5:
     has_velocity_limits: true
-    max_velocity: 1.0
+    max_velocity: 0.5
     has_acceleration_limits: true
-    max_acceleration: 1.0
+    max_acceleration: 0.5
   iri_wam_joint_6:
     has_velocity_limits: true
-    max_velocity: 1.0
+    max_velocity: 0.5
     has_acceleration_limits: true
-    max_acceleration: 1.0
+    max_acceleration: 0.5
   iri_wam_joint_7:
     has_velocity_limits: true
-    max_velocity: 1.0
+    max_velocity: 0.5
     has_acceleration_limits: true
-    max_acceleration: 1.0
+    max_acceleration: 0.5

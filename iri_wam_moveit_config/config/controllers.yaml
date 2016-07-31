@@ -1,6 +1,6 @@
 controller_manager_ns: moveit_simple_controller_manager
 controller_list:
-  - name: iri_wam_controller
+  - name: iri_wam/iri_wam_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     default: true
