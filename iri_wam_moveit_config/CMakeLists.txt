@@ -3,8 +3,6 @@ project(iri_wam_moveit_config)
 
 find_package(catkin REQUIRED)
 
-catkin_python_setup()
-
 catkin_package()
 
 install(DIRECTORY launch DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
