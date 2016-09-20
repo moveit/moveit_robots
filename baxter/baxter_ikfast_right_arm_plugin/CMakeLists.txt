@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(baxter_ikfast_right_arm_plugin)
 
+add_compile_options(-std=c++11)
+
 find_package(catkin REQUIRED COMPONENTS
   moveit_core
   pluginlib
@@ -9,8 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   cmake_modules
 )
 
-find_package(Eigen REQUIRED)
-include_directories(SYSTEM ${EIGEN_INCLUDE_DIRS})
+find_package(Eigen3 REQUIRED)
 
 include_directories(${catkin_INCLUDE_DIRS})
 link_directories(${catkin_LIBRARY_DIRS})
@@ -24,7 +25,11 @@ catkin_package(
   tf_conversions
 )
 
-include_directories(include)
+include_directories(
+  include
+  ${EIGEN3_INCLUDE_DIRS}
+  ${catkin_INCLUDE_DIRS}
+)
 
 set(IKFAST_LIBRARY_NAME baxter_right_arm_moveit_ikfast_plugin)
 
