@@ -10,21 +10,29 @@
   <!-- By default we do not overwrite the URDF. Change the following to true to change the default behavior -->
   <arg name="load_robot_description" default="false"/>
 
+  <!-- The name of the parameter under which the URDF is loaded -->
+  <arg name="robot_description" default="robot_description"/>
+
   <!-- Load universal robotic description format (URDF) -->
-  <param if="$(arg load_robot_description)" name="robot_description"
-      command="$(find xacro)/xacro.py --inorder $(find baxter_description)/urdf/baxter.urdf.xacro"/>
+  <param if="$(arg load_robot_description)" name="$(arg robot_description)"
+      command="$(find xacro)/xacro --inorder $(find baxter_description)/urdf/baxter.urdf.xacro"/>
 
   <!-- The semantic description that corresponds to the URDF -->
-  <param name="robot_description_semantic"
-      command="$(find xacro)/xacro.py --inorder $(find baxter_moveit_config)/config/baxter.srdf.xacro
+  <param name="$(arg robot_description)_semantic"
+      command="$(find xacro)/xacro --inorder $(find baxter_moveit_config)/config/baxter.srdf.xacro
           left_electric_gripper:=$(arg left_electric_gripper)
           right_electric_gripper:=$(arg right_electric_gripper)
           left_tip_name:=$(arg left_tip_name)
           right_tip_name:=$(arg right_tip_name)"/>
 
   <!-- Load to the parameter server yaml files -->
-  <group ns="robot_description_planning">
+  <group ns="$(arg robot_description)_planning">
     <rosparam command="load" file="$(find baxter_moveit_config)/config/joint_limits.yaml"/>
+  </group>
+
+  <!-- Load default settings for kinematics; these settings are overridden by settings in a node's namespace -->
+  <group ns="$(arg robot_description)_kinematics">
+    <rosparam command="load" file="$(find baxter_moveit_config)/config/kinematics.yaml"/>
   </group>
 
 </launch>
