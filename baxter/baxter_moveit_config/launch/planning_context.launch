@@ -15,7 +15,9 @@
 
   <!-- Load universal robotic description format (URDF) -->
   <param if="$(arg load_robot_description)" name="$(arg robot_description)"
-      command="$(find xacro)/xacro --inorder $(find baxter_description)/urdf/baxter.urdf.xacro"/>
+      command="$(find xacro)/xacro --inorder $(find baxter_description)/urdf/baxter.urdf.xacro
+          left_electric_gripper:=$(arg left_electric_gripper)
+          right_electric_gripper:=$(arg right_electric_gripper)"/>
 
   <!-- The semantic description that corresponds to the URDF -->
   <param name="$(arg robot_description)_semantic"
