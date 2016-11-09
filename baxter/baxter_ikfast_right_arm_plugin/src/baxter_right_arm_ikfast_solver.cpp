@@ -165,21 +165,21 @@ inline double IKtan(double f) { return tan(f); }
 inline float IKsqrt(float f) { if( f <= 0.0f ) return 0.0f; return sqrtf(f); }
 inline double IKsqrt(double f) { if( f <= 0.0 ) return 0.0; return sqrt(f); }
 inline float IKatan2(float fy, float fx) {
-    if( isnan(fy) ) {
-        IKFAST_ASSERT(!isnan(fx)); // if both are nan, probably wrong value will be returned
+    if( std::isnan(fy) ) {
+        IKFAST_ASSERT(!std::isnan(fx)); // if both are nan, probably wrong value will be returned
         return float(IKPI_2);
     }
-    else if( isnan(fx) ) {
+    else if( std::isnan(fx) ) {
         return 0;
     }
     return atan2f(fy,fx);
 }
 inline double IKatan2(double fy, double fx) {
-    if( isnan(fy) ) {
-        IKFAST_ASSERT(!isnan(fx)); // if both are nan, probably wrong value will be returned
+    if( std::isnan(fy) ) {
+        IKFAST_ASSERT(!std::isnan(fx)); // if both are nan, probably wrong value will be returned
         return IKPI_2;
     }
-    else if( isnan(fx) ) {
+    else if( std::isnan(fx) ) {
         return 0;
     }
     return atan2(fy,fx);
