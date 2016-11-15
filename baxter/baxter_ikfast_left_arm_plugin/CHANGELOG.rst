@@ -2,8 +2,8 @@
 Changelog for package baxter_ikfast_left_arm_plugin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.7 (2016-11-15)
+------------------
 * [fix] Added missing dependency on lapack and blas
 * Contributors: Dave Coleman
 

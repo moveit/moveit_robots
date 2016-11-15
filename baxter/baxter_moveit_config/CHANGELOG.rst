@@ -2,8 +2,8 @@
 Changelog for package baxter_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.7 (2016-11-15)
+------------------
 * [enahancement] Add option not to launch db in baxter_moveit_config
 * Contributors: Kentaro Wada
 
