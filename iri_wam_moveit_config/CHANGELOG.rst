@@ -2,6 +2,13 @@
 Changelog for package iri_wam_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* [fix] Eigen3. Add C++11 support to fix compile bug (`#50 <https://github.com/ros-planning/moveit_robots/issues/50>`_)
+* [fix] iri_wam: remove broken python install directives
+* [enhancement] updating configuration files and allowing trajectory execution (`#36 <https://github.com/ros-planning/moveit_robots/issues/36>`_)
+* Contributors: Dave Coleman, Michael Goerner, Sergi
+
 1.0.6 (2016-04-19)
 ------------------
 

@@ -2,6 +2,12 @@
 Changelog for package baxter_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* [capability] Add option from Setup Assistant into old Baxter moveit config
+* [capability] Add option not to launch db in baxter_moveit_config
+* Contributors: Dave Coleman, Kentaro Wada
+
 1.0.6 (2016-04-19)
 ------------------
 * [fix] both_arm move group stopped functioning (`ref <https://groups.google.com/a/rethinkrobotics.com/forum/#!topic/brr-users/59kLdsAfR-g>`_)

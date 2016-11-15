@@ -2,6 +2,14 @@
 Changelog for package baxter_ikfast_left_arm_plugin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* [fix] isnan -> std::isnan to fix build errors (`#56 <https://github.com/ros-planning/moveit_robots/issues/56>`_)
+* [fix] remove redundant include_directories. 
+* [fix] Eigen3. Add C++11 support to fix compile bug (`#50 <https://github.com/ros-planning/moveit_robots/issues/50>`_)
+* [fix] Added missing dependency on lapack and blas
+* Contributors: Dave Coleman, Michael Goerner, Shingo Kitagawa
+
 1.0.6 (2016-04-19)
 ------------------
 
