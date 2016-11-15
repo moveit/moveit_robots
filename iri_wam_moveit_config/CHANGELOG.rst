@@ -2,6 +2,13 @@
 Changelog for package iri_wam_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* [fix] iri_wam: remove broken python install directives
+* [capability] Adding Gazebo robot controller iri_wam_trajectory_controller
+* [enhancement] updating configuration files and allowing trajectory execution (`#36 <https://github.com/ros-planning/moveit_robots/issues/36>`_)
+* Contributors: Michael Goerner, Sergi
+
 1.0.6 (2016-04-19)
 ------------------
 
