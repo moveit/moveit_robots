@@ -19,7 +19,7 @@
   <node name="dummy_joint_trajectory_controller" pkg="baxter_moveit_config" type="dummy_joint_trajectory_controller">
     <remap from="/joint_states" to="/robot/joint_states" />
   </node>
-  
+
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen">
     <remap from="/joint_states" to="/robot/joint_states" />
   </node>
@@ -38,8 +38,13 @@
     <arg name="rviz_config" value="$(arg rviz_config)" />
   </include>
 
+  <!-- As of ROS Kinetic / Ubuntu 16.04 the mongo driver does not have a binary and must be installed from source.
+       Therefore, this functionality is disabled by default. For more info:
+       https://github.com/ros-planning/moveit/issues/123
+  -->
+
   <!-- If this package is installed, setting 'db' as 'false' or db_path to user permission dir is required. -->
-  <arg name="db" default="true" />
+  <arg name="db" default="false" />
   <arg name="db_path" default="$(find baxter_moveit_config)/default_warehouse_mongo_db" />
   <group if="$(arg db)">
     <include file="$(find baxter_moveit_config)/launch/default_warehouse_db.launch">
