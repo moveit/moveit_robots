@@ -4,7 +4,7 @@
   <arg unless="$(arg debug)" name="launch_prefix" value="" />
   <arg     if="$(arg debug)" name="launch_prefix" value="gdb --ex run --args" />
 
-  <arg name="info" default="$(arg debug)" />  
+  <arg name="info" default="$(arg debug)" />
   <arg unless="$(arg info)" name="command_args" value="" />
   <arg     if="$(arg info)" name="command_args" value="--debug" />
 
@@ -18,10 +18,10 @@
   </include>
 
   <include ns="move_group" file="$(find baxter_moveit_config)/launch/trajectory_execution.launch" if="$(arg allow_trajectory_execution)">
-    <arg name="moveit_controller_manager" value="baxter" /> 
+    <arg name="moveit_controller_manager" value="baxter" />
     <arg name="moveit_manage_controllers" value="true" />
   </include>
-  
+
   <arg name="kinect" default="false" />
   <arg name="xtion" default="false" />
   <arg name="camera_link_pose" default="0.15 0.075 0.5 0.0 0.7854 0.0"/>
@@ -29,7 +29,7 @@
     <arg name="kinect" value="$(arg kinect)" />
     <arg name="xtion" value="$(arg xtion)" />
     <arg name="camera_link_pose" default="$(arg camera_link_pose)"/>
-    <arg name="moveit_sensor_manager" value="baxter" /> 
+    <arg name="moveit_sensor_manager" value="baxter" />
   </include>
 
   <node name="move_group" launch-prefix="$(arg launch_prefix)" pkg="moveit_ros_move_group" type="move_group" respawn="false" output="screen" args="joint_states:=/robot/joint_states $(arg command_args)">
@@ -42,7 +42,7 @@
 
     <!-- MoveGroup capabilities to load -->
     <param name="capabilities" value="move_group/MoveGroupCartesianPathService
-				      move_group/MoveGroupExecuteService
+				      move_group/MoveGroupExecuteTrajectoryAction
 				      move_group/MoveGroupKinematicsService
 				      move_group/MoveGroupMoveAction
 				      move_group/MoveGroupPickPlaceAction
@@ -58,5 +58,5 @@
     <param name="planning_scene_monitor/publish_state_updates" value="$(arg publish_monitored_planning_scene)" />
     <param name="planning_scene_monitor/publish_transforms_updates" value="$(arg publish_monitored_planning_scene)" />
   </node>
-  
+
 </launch>
