@@ -2,7 +2,7 @@
 <launch>
   <arg name="config" default="true"/>
   <arg name="rviz_config" default="$(find baxter_moveit_config)/launch/moveit.rviz" />
-   
+
   <!-- By default we do not overwrite the URDF. Change the following to true to change the default behavior -->
   <arg name="load_robot_description" default="false"/>
   <!-- Left and right electric gripper params. Set to true to check for collisions for their links -->
@@ -34,5 +34,10 @@
     <arg name="rviz_config" value="$(arg rviz_config)" />
   </include>
 
-  <include file="$(find baxter_moveit_config)/launch/default_warehouse_db.launch" />
+  <!-- As of ROS Kinetic / Ubuntu 16.04 the mongo driver does not have a binary and must be installed from source.
+       Therefore, this functionality is disabled by default. For more info:
+       https://github.com/ros-planning/moveit/issues/123
+  -->
+  <!-- <include file="$(find baxter_moveit_config)/launch/default_warehouse_db.launch" /> -->
+
 </launch>
