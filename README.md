@@ -1,5 +1,4 @@
-moveit_robots
-=============
+# MoveIt! Robots
 
 This repository contains configuration packages for different robots using MoveIt!
 
