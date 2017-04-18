@@ -15,6 +15,6 @@ env:
     - ROS_DISTRO=kinetic ROS_REPO=ros              BEFORE_SCRIPT='$CI_SOURCE_PATH/.travis_before_script.bash' UPSTREAM_WORKSPACE=https://raw.githubusercontent.com/ros-planning/moveit/kinetic-devel/moveit.rosinstall
     - ROS_DISTRO=kinetic ROS_REPO=ros-shadow-fixed BEFORE_SCRIPT='$CI_SOURCE_PATH/.travis_before_script.bash' UPSTREAM_WORKSPACE=https://raw.githubusercontent.com/ros-planning/moveit/kinetic-devel/moveit.rosinstall
 before_script:
-  - git clone -q https://github.com/ros-planning/moveit_ci.git .moveit_ci -b moveit-robots
+  - git clone -q https://github.com/ros-planning/moveit_ci.git .moveit_ci
 script:
   - source .moveit_ci/travis.sh
