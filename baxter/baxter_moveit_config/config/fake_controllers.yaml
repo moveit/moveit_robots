@@ -1,0 +1,30 @@
+controller_list:
+  - name: fake_right_controller
+    joints:
+      - right_s0
+      - right_s1
+      - right_e0
+      - right_e1
+      - right_w0
+      - right_w1
+      - right_w2
+  - name: fake_left_controller
+    joints:
+      - left_s0
+      - left_s1
+      - left_e0
+      - left_e1
+      - left_w0
+      - left_w1
+      - left_w2
+  - name: fake_head_controller
+    joints:
+      - head_pan
+  - name: fake_l_gripper_controller
+    joints:
+      - l_gripper_l_finger_joint
+      - l_gripper_r_finger_joint
+  - name: fake_r_gripper_controller
+    joints:
+      - r_gripper_l_finger_joint
+      - r_gripper_r_finger_joint
