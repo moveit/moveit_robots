@@ -67,4 +67,7 @@
       <arg name="moveit_warehouse_database_path" value="$(arg db_path)" />
     </include>
   </group>
+
+  <node name="world_to_base" pkg="tf" type="static_transform_publisher"
+        args="0 0 0.9 0 0 0 world base 10" />
 </launch>
