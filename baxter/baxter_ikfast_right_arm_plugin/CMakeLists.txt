@@ -11,8 +11,6 @@ find_package(catkin REQUIRED COMPONENTS
   cmake_modules
 )
 
-find_package(Eigen3 REQUIRED)
-
 catkin_package(
   LIBRARIES
   DEPENDS
@@ -24,7 +22,6 @@ catkin_package(
 
 include_directories(
   include
-  ${EIGEN3_INCLUDE_DIRS}
   ${catkin_INCLUDE_DIRS}
 )
 

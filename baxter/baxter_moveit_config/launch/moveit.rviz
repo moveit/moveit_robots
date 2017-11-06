@@ -682,7 +682,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: world
+    Fixed Frame: base
     Frame Rate: 30
   Name: root
   Tools:
@@ -709,7 +709,7 @@ Visualization Manager:
       Name: Current View
       Near Clip Distance: 0.00999999978
       Pitch: 0.140202954
-      Target Frame: base_link
+      Target Frame: base
       Value: XYOrbit (rviz)
       Yaw: 5.99494314
     Saved: ~

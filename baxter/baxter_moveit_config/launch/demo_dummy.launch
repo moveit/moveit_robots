@@ -2,6 +2,18 @@
   <arg name="config" default="true"/>
   <arg name="rviz_config" default="$(find baxter_moveit_config)/launch/moveit.rviz" />
 
+  <!--
+  By default, hide joint_state_publisher's GUI
+
+  MoveIt!'s "demo" mode replaces the real robot driver with the
+  joint_state_publisher.
+  The latter one maintains and publishes the current joint
+  configuration of the simulated robot.
+  It also provides a GUI to move the simulated robot around"manually".
+  This corresponds to moving around the real robot without the use of MoveIt.
+  -->
+  <arg name="use_gui" default="false" />
+
   <!-- Left and right electric gripper params. Set to true to check for collisions for their links -->
   <arg name="right_electric_gripper" default="false"/>
   <arg name="left_electric_gripper" default="false"/>
@@ -16,8 +28,11 @@
     <arg name="right_tip_name" value="$(arg right_tip_name)"/>
   </include>
 
-  <node name="dummy_joint_trajectory_controller" pkg="baxter_moveit_config" type="dummy_joint_trajectory_controller">
+  <!-- We do not have a robot connected, so publish fake joint states -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
     <remap from="/joint_states" to="/robot/joint_states" />
+    <param name="/use_gui" value="$(arg use_gui)"/>
+    <rosparam param="/source_list">[/move_group/fake_controller_joint_states]</rosparam>
   </node>
 
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen">
@@ -29,6 +44,7 @@
   <include file="$(find baxter_moveit_config)/launch/move_group.launch">
     <arg name="kinect" value="$(arg kinect)" />
     <arg name="xtion" value="$(arg xtion)" />
+    <arg name="fake_execution" value="true"/>
     <arg name="camera_link_pose" default="$(arg camera_link_pose)"/>
     <arg name="allow_trajectory_execution" value="true"/>
   </include>
@@ -51,4 +67,7 @@
       <arg name="moveit_warehouse_database_path" value="$(arg db_path)" />
     </include>
   </group>
+
+  <node name="world_to_base" pkg="tf" type="static_transform_publisher"
+        args="0 0 0.9 0 0 0 world base 10" />
 </launch>
