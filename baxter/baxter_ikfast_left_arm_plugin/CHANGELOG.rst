@@ -2,6 +2,9 @@
 Changelog for package baxter_ikfast_left_arm_plugin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.1.0 (2016-11-15)
 ------------------
 * [fix] isnan -> std::isnan to fix build errors (`#56 <https://github.com/ros-planning/moveit_robots/issues/56>`_)

@@ -2,6 +2,11 @@
 Changelog for package moveit_robots
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* [capability] add gripper option for robot_description (`#57 <https://github.com/ros-planning/moveit_robots/issues/57>`_)
+* Contributors: Shingo Kitagawa
+
 1.1.0 (2016-11-15)
 ------------------
 

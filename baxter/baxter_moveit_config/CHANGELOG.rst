@@ -2,6 +2,11 @@
 Changelog for package baxter_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* [capability] add gripper option for robot_description (`#57 <https://github.com/ros-planning/moveit_robots/issues/57>`_)
+* Contributors: Shingo Kitagawa
+
 1.1.0 (2016-11-15)
 ------------------
 * [capability] Add option from Setup Assistant into old Baxter moveit config
