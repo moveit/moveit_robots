@@ -6,8 +6,7 @@
      An automatically generated package with all the configuration and launch files for using the atlas with the MoveIt Motion Planning Framework
   </description>
   <author>Yohei Kakiuchi</author>
-  <maintainer email="assistant@moveit.ros.org">MoveIt Setup Assistant</maintainer>
-  <maintainer email="robot.moveit@gmail.com">Sachin Chitta</maintainer>
+  <maintainer email="gm130s@gmail.com">Isaac I.Y. Saito</maintainer>
 
   <license>BSD</license>
 
