@@ -286,5 +286,6 @@
     <disable_collisions link1="screen" link2="sonar_ring" reason="Never" />
     <disable_collisions link1="screen" link2="torso" reason="Never" />
     <disable_collisions link1="sonar_ring" link2="torso" reason="Adjacent" />
+    <disable_collisions link1="screen" link2="display" reason="Adjacent" />
 </xacro:macro>
 </robot>
