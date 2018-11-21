@@ -13,9 +13,10 @@
   <arg name="max_safe_path_cost" default="1"/>
   <arg name="jiggle_fraction" default="0.05" />
   <arg name="publish_monitored_planning_scene" default="true"/>
+  <arg name="planner" default="ompl" />
 
   <include ns="move_group" file="$(find baxter_moveit_config)/launch/planning_pipeline.launch">
-    <arg name="pipeline" value="ompl" />
+    <arg name="pipeline" value="$(arg planner)" />
   </include>
 
   <include ns="move_group" file="$(find baxter_moveit_config)/launch/trajectory_execution.launch" if="$(arg allow_trajectory_execution)">
