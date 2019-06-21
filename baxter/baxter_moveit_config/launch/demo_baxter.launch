@@ -2,6 +2,8 @@
 <launch>
   <arg name="config" default="true"/>
   <arg name="rviz_config" default="$(find baxter_moveit_config)/launch/moveit.rviz" />
+  <arg name="planner" default="ompl" />
+  <arg name="debug" default="false" />
 
   <!-- By default we do not overwrite the URDF. Change the following to true to change the default behavior -->
   <arg name="load_robot_description" default="false"/>
@@ -27,6 +29,8 @@
     <arg name="xtion" value="$(arg xtion)" />
     <arg name="camera_link_pose" value="$(arg camera_link_pose)"/>
     <arg name="allow_trajectory_execution" value="true"/>
+    <arg name="planner" value="$(arg planner)" />
+    <arg name="debug" value="$(arg debug)"/>
   </include>
 
   <include file="$(find baxter_moveit_config)/launch/moveit_rviz.launch">
