@@ -3,6 +3,9 @@
   <arg name="camera_link_pose" default="0.15 0.075 0.5 0.0 0.7854 0.0"/>
   <arg name="config" default="true"/>
   <arg name="rviz_config" default="$(find baxter_moveit_config)/launch/moveit.rviz" />
+  <arg name="planner" default="ompl" />
+  <arg name="debug" default="false" />
+
   <!-- By default we do not overwrite the URDF. Change the following to true to change the default behavior -->
   <arg name="load_robot_description" default="false"/>
   <!-- Left and right electric gripper params. Set to true to check for collisions for their links -->
@@ -16,9 +19,11 @@
   <!-- Calls the demo_baxter launch file with the kinect argument set to true -->
   <include file="$(find baxter_moveit_config)/launch/demo_baxter.launch">
     <arg name="kinect" value="true" />
-    <arg name="camera_link_pose" default="$(arg camera_link_pose)"/>
+    <arg name="camera_link_pose" value="$(arg camera_link_pose)"/>
     <arg name="config" value="$(arg config)" />
     <arg name="rviz_config" value="$(arg rviz_config)" />
+    <arg name="planner" value="$(arg planner)" />
+    <arg name="debug" value="$(arg debug)"/>
     <arg name="load_robot_description" value="$(arg load_robot_description)"/>
     <arg name="left_electric_gripper" value="$(arg left_electric_gripper)"/>
     <arg name="right_electric_gripper" value="$(arg right_electric_gripper)"/>
