@@ -1,0 +1,110 @@
+# ompl
+planner_configs:
+  SBLkConfigDefault:
+    type: geometric::SBL
+  LBKPIECEkConfigDefault:
+    type: geometric::LBKPIECE
+  RRTkConfigDefault:
+    type: geometric::RRT
+  RRTConnectkConfigDefault:
+    type: geometric::RRTConnect
+  LazyRRTkConfigDefault:
+    type: geometric::LazyRRT
+  ESTkConfigDefault:
+    type: geometric::EST
+  KPIECEkConfigDefault:
+    type: geometric::KPIECE
+  RRTStarkConfigDefault:
+    type: geometric::RRTstar
+  BKPIECEkConfigDefault:
+    type: geometric::BKPIECE
+left_arm:
+  default_planner_config: RRTConnectkConfigDefault
+  planner_configs:
+    - SBLkConfigDefault
+    - LBKPIECEkConfigDefault
+    - RRTkConfigDefault
+    - RRTConnectkConfigDefault
+    - ESTkConfigDefault
+    - KPIECEkConfigDefault
+    - BKPIECEkConfigDefault
+    - RRTStarkConfigDefault
+  projection_evaluator: joints(left_s0,left_s1)
+  longest_valid_segment_fraction: 0.05
+right_arm:
+  default_planner_config: RRTConnectkConfigDefault
+  planner_configs:
+    - SBLkConfigDefault
+    - LBKPIECEkConfigDefault
+    - RRTkConfigDefault
+    - RRTConnectkConfigDefault
+    - ESTkConfigDefault
+    - KPIECEkConfigDefault
+    - BKPIECEkConfigDefault
+    - RRTStarkConfigDefault
+  projection_evaluator: joints(right_s0,right_s1)
+  longest_valid_segment_fraction: 0.05
+both_arms:
+  default_planner_config: RRTConnectkConfigDefault
+  planner_configs:
+    - SBLkConfigDefault
+    - LBKPIECEkConfigDefault
+    - RRTkConfigDefault
+    - RRTConnectkConfigDefault
+    - ESTkConfigDefault
+    - KPIECEkConfigDefault
+    - BKPIECEkConfigDefault
+    - RRTStarkConfigDefault
+  projection_evaluator: joints(right_s0,right_s1)
+  longest_valid_segment_fraction: 0.05
+left_hand:
+  default_planner_config: RRTConnectkConfigDefault
+  planner_configs:
+    - SBLkConfigDefault
+    - LBKPIECEkConfigDefault
+    - RRTkConfigDefault
+    - RRTConnectkConfigDefault
+    - ESTkConfigDefault
+    - KPIECEkConfigDefault
+    - BKPIECEkConfigDefault
+    - RRTStarkConfigDefault
+right_hand:
+  default_planner_config: RRTConnectkConfigDefault
+  planner_configs:
+    - SBLkConfigDefault
+    - LBKPIECEkConfigDefault
+    - RRTkConfigDefault
+    - RRTConnectkConfigDefault
+    - ESTkConfigDefault
+    - KPIECEkConfigDefault
+    - BKPIECEkConfigDefault
+    - RRTStarkConfigDefault
+# chomp
+planning_time_limit: 10.0
+max_iterations: 200
+max_iterations_after_collision_free: 5
+smoothness_cost_weight: 0.1
+obstacle_cost_weight: 1.0
+learning_rate: 0.01
+animate_path: true
+add_randomness: false
+smoothness_cost_velocity: 0.0
+smoothness_cost_acceleration: 1.0
+smoothness_cost_jerk: 0.0
+hmc_discretization: 0.01
+hmc_stochasticity: 0.01
+hmc_annealing_factor: 0.99
+use_hamiltonian_monte_carlo: false
+ridge_factor: 0.0
+use_pseudo_inverse: false
+pseudo_inverse_ridge_factor: 1e-4
+animate_endeffector: false
+animate_endeffector_segment: "left_gripper"
+joint_update_limit: 0.1
+collision_clearence: 0.2
+collision_threshold: 0.07
+random_jump_amount: 1.0
+use_stochastic_descent: true
+enable_failure_recovery: false
+max_recovery_attempts: 5
+trajectory_initialization_method: "fillTrajectory"
